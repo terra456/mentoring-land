@@ -1,0 +1,156 @@
+@use "../mixins/index" as *;
+@use "../base/variables" as *;
+
+.btn-conteiner {
+  padding-bottom: 24px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+
+  @media (width < $to-tablet-width) {
+    padding-bottom: 16px;
+    gap: 8px;
+  }
+
+  @media (width < $to-mobile-width) {
+    flex-direction: column;
+  }
+}
+
+.btn {
+  @include text-button-16-semibold;
+
+  position: relative;
+  padding: 17px 32.5px;
+  min-width: 262px;
+  display: flex;
+  width: 238px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+
+  @media (width < $to-tablet-width) {
+    padding: 16px 20px;
+    min-width: 240px;
+  }
+
+  @media (width < $to-mobile-width) {
+    padding: 16px 20px;
+    min-width: auto;
+    width: 100%;
+  }
+
+  // background-color: #1a3c80;
+  color: var(--white);
+  transition: all 300ms;
+
+  &::before {
+    background-color: var(--white);
+    transition: all 300ms;
+  }
+
+  &--primary {
+    background: var(--liner-button);
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+
+    &:hover {
+      background-position: 100% 0%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #397dff;
+        z-index: -1;
+        opacity: 0;
+        animation: fade-in 300ms ease forwards;
+      }
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: var(--accent-orange);
+    border: 1px solid var(--accent-orange);
+
+    &::before {
+      background-color: var(--accent-orange);
+    }
+
+    &:hover {
+      color: var(--white);
+      background: var(--accent-orange);
+    }
+  }
+
+  &--tg::before {
+    left: calc(50% - 100px);
+    mask-image: url("/assets/icon/tg.svg");
+
+    @media (width < $to-mobile-width) {
+      left: calc(50% - 90px);
+    }
+  }
+
+  &--mail::before {
+    left: calc(50% - 84px);
+    mask-image: url("/assets/icon/mail.svg");
+
+    @media (width < $to-mobile-width) {
+      left: calc(50% - 75px);
+    }
+  }
+
+  &--tg,
+  &--mail {
+    position: relative;
+    padding-left: calc(20px + 8px + 32.5px);
+
+    @media (width < $to-tablet-width) {
+      padding-left: calc(18px + 8px + 20px);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% - 17px / 2);
+      width: 20px;
+      height: 17px;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+    }
+
+    &:hover::before {
+      background-color: var(--white);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+
+    &:hover {
+      background-color: var(--color-primary);
+      color: white;
+    }
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

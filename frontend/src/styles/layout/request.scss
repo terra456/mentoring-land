@@ -1,0 +1,107 @@
+@use "../mixins/typography" as *;
+@use "../mixins/utils" as *;
+@use "../base/variables" as *;
+
+.request {
+  &_wrapper {
+    @media (width < $to-tablet-width) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  &_title {
+    @include h2-40-semibold;
+
+    font-size: 48px;
+    padding-bottom: 24px;
+
+    @media (width < $to-tablet-width) {
+      margin: 0 32px;
+    }
+
+    @media (width < $to-mobile-width) {
+      font-size: 32px;
+      padding-bottom: 8px;
+    }
+  }
+
+  &_subtitle {
+    @include h2-40-semibold;
+
+    padding-bottom: 24px;
+
+    @media (width < $to-tablet-width) {
+      margin: 0 32px;
+    }
+
+    @media (width < $to-mobile-width) {
+      font-size: 18px;
+      padding-bottom: 16px;
+      margin: 0 16px;
+    }
+  }
+
+  &_desc {
+    @include body-24-regular;
+
+    text-align: center;
+    padding-bottom: 80px;
+
+    @media (width < $to-tablet-width) {
+      padding-bottom: 40px;
+      margin: 0 32px;
+    }
+
+    @media (width < $to-mobile-width) {
+      font-size: 16px;
+      padding-bottom: 40px;
+      margin: 0 16px;
+      line-height: 130%;
+    }
+  }
+
+  &_conteiner {
+    padding: 65px 172px;
+    border-radius: 10px;
+    background-image:
+      linear-gradient(0deg, rgb(47 128 237 / 6%) 26.45%, rgb(27 73 135 / 1%) 100%),
+      url("/assets/images/chat.webp"), url("/assets/images/paper.webp");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position:
+      center,
+      bottom -120px left -85px,
+      bottom -67px right -60px;
+    background-size:
+      cover,
+      360px 360px,
+      315px 315px;
+    box-shadow: var(--card-shadow);
+
+    @media (width < $to-tablet-width) {
+      padding: 65px 32px;
+      background-image:
+        linear-gradient(0deg, rgb(47 128 237 / 6%) 26.45%, rgb(27 73 135 / 1%) 100%),
+        url("/assets/images/chat-tablet.webp"), url("/assets/images/paper-tablet.webp");
+      background-size:
+        cover,
+        156px 178px,
+        174px 187px;
+      background-position:
+        center,
+        bottom left,
+        bottom right;
+    }
+
+    @media (width < $to-mobile-width) {
+      padding: 40px 16px;
+      background-image:
+        linear-gradient(0deg, rgb(47 128 237 / 6%) 26.45%, rgb(27 73 135 / 1%) 100%),
+        url("/assets/images/chat-mobile.webp"), url("/assets/images/paper-mobile.webp");
+      background-size:
+        cover,
+        85px 73px,
+        76px 69px;
+    }
+  }
+}

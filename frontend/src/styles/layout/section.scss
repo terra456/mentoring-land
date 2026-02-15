@@ -1,0 +1,44 @@
+@use "../mixins/typography" as *;
+@use "../base/variables" as *;
+
+.section {
+  &_wrapper {
+    max-width: calc(var(--desctop-width) + 2 * var(--desctop-padding));
+    padding: 0 var(--desctop-padding);
+    padding-bottom: 120px;
+    margin: 0 auto;
+
+    @media (width < $to-mobile-width) {
+      padding: 0 var(--mobile-padding);
+      padding-bottom: 80px;
+    }
+  }
+
+  &_title {
+    @include h2-40-semibold;
+
+    padding-bottom: 24px;
+    text-align: center;
+
+    @media (width < $to-tablet-width) {
+      padding-bottom: 16px;
+    }
+
+    @media (width < $to-mobile-width) {
+      padding-bottom: 16px;
+    }
+  }
+
+  &_subtitle {
+    @include body-regular;
+
+    font-size: 18px;
+    padding-bottom: 80px;
+    text-align: center;
+
+    @media (width < $to-mobile-width) {
+      font-size: 16px;
+      padding-bottom: 40px;
+    }
+  }
+}

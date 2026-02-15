@@ -1,0 +1,5 @@
+@use "../mixins/index" as *;
+
+.stage {
+  @include flex-between;
+}

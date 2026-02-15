@@ -1,0 +1,129 @@
+@use "../mixins/typography" as *;
+@use "../mixins/utils" as *;
+@use "../base/variables" as *;
+
+.chart {
+  position: relative;
+
+  &_years {
+    padding: 64px 24px 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+
+    @media (width < $to-mobile-width) {
+      padding: 24px 0 0;
+    }
+  }
+
+  &_year-btn {
+    @include body-accent-20-semibold;
+
+    position: relative;
+    display: flex;
+    padding: 4px 8px 4px calc(8px + 16px + 8px);
+    place-content: center center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid transparent;
+
+    @media (width < $to-mobile-width) {
+      font-size: 16px;
+      padding: 4px 8px 4px calc(8px + 16px + 8px);
+    }
+
+    &.active,
+    &:hover,
+    &:active {
+      border: 1px solid var(--blue-500);
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: calc(50% - 1px);
+        width: 16px;
+        height: 2px;
+        background: var(--blue-500);
+      }
+    }
+  }
+
+  &_tooltip {
+    @include body-18-regular;
+
+    position: absolute;
+    top: 100px;
+    left: 300px;
+    display: none;
+    width: 670px;
+    padding: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 10px;
+    background: var(--white);
+
+    /* for card */
+    box-shadow: var(--card-shadow);
+
+    @media (width < $to-tablet-width) {
+      top: 140px;
+      left: 80px;
+      width: 534px;
+      font-size: 16px;
+    }
+
+    @media (width < $to-mobile-width) {
+      top: 140px;
+      left: 8%;
+      width: 100%;
+      max-width: 343px;
+      font-size: 14px;
+    }
+  }
+
+  &_accent {
+    @include text-button-16-semibold;
+
+    color: var(--blue-500);
+    white-space: nowrap;
+
+    @media (width < $to-tablet-width) {
+      font-size: 16px;
+    }
+  }
+
+  &_wrapper:hover .chart_tooltip {
+    display: flex;
+  }
+
+  &_tooltip.open {
+    display: flex;
+  }
+
+  &_close-btn {
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+}
+
+.chart-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 5px;
+}
+
+// Адаптивность для canvas
+canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 500px;
+}

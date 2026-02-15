@@ -1,0 +1,129 @@
+@use "../mixins/index" as *;
+@use "../base/variables" as *;
+
+.reviews {
+  & .swiper {
+    @media (width < $to-tablet-width) {
+      overflow: visible;
+    }
+
+    @media (width < $to-mobile-width) {
+      padding-bottom: 16px;
+    }
+  }
+
+  /*
+  &_conteiner {
+    @media (width < $to-tablet-width) {
+      width: 90%;
+    }
+
+    @media (width < $to-mobile-width) {
+      width: 100%;
+    }
+  }
+*/
+  &_slide {
+    position: relative;
+    height: 100%;
+    padding: 32px 32px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background: transparent;
+    box-shadow: var(--card-shadow);
+
+    @media (width < $to-mobile-width) {
+      padding: 24px 16px 32px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 40px;
+      right: 26px;
+      z-index: 100;
+      width: 28px;
+      height: 28px;
+      background: var(--liner-orange);
+      display: block;
+      mask-image: url("/assets/icon/quotes.svg");
+      mask-position: center;
+      mask-size: contain;
+      mask-repeat: no-repeat;
+    }
+
+    &:hover {
+      border-radius: 10px;
+      background: var(--bg, #fcfcfc);
+      box-shadow: var(--card-shadow);
+
+      &::before {
+        background: var(--liner);
+      }
+    }
+  }
+
+  &_logo {
+    width: 129px;
+    height: 128px;
+    margin-bottom: 16px;
+    object-fit: contain;
+  }
+
+  &_title {
+    color: var(--text-dark-500);
+
+    @include text-button-16-semibold;
+
+    padding-bottom: 24px;
+
+    @media (width < $to-mobile-width) {
+      font-size: 16px;
+      padding-bottom: 16px;
+    }
+  }
+
+  &_desc {
+    padding-bottom: 40px;
+    flex-grow: 1;
+    color: var(--body-text-100);
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+
+    @media (width < $to-mobile-width) {
+      font-size: 16px;
+      line-height: 130%;
+    }
+  }
+
+  &_name {
+    width: 100%;
+    color: var(--text-dark-500);
+
+    @include text-button-16-semibold;
+
+    padding-bottom: 8px;
+
+    @media (width < $to-mobile-width) {
+      font-size: 16px;
+    }
+  }
+
+  &_profession {
+    width: 100%;
+
+    @include body-16-regular;
+
+    color: var(--body-text-200);
+
+    @media (width < $to-mobile-width) {
+      font-size: 14px;
+    }
+  }
+}

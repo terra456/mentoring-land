@@ -1,0 +1,49 @@
+@font-face {
+  font-family: Tektur;
+  src:
+    url("/assets/fonts/Tektur/Tektur-ExtraBold.woff2") format("woff2"),
+    url("/assets/fonts/Tektur/Tektur-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Tektur;
+  src:
+    url("/assets/fonts/Tektur/Tektur-Bold.woff2") format("woff2"),
+    url("/assets/fonts/Tektur/Tektur-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Tektur;
+  src:
+    url("/assets/fonts/Tektur/Tektur-SemiBold.woff2") format("woff2"),
+    url("/assets/fonts/Tektur/Tektur-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+// @font-face {
+//   font-family: Tektur;
+//   src:
+//     url("/assets/fonts/Tektur/Tektur-Regular.woff2") format("woff2"),
+//     url("/assets/fonts/Tektur/Tektur-Regular.woff") format("woff");
+//   font-weight: normal;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
+// @font-face {
+//   font-family: Tektur;
+//   src:
+//     url("/assets/fonts/Tektur/Tektur-Medium.woff2") format("woff2"),
+//     url("/assets/fonts/Tektur/Tektur-Medium.woff") format("woff");
+//   font-weight: 500;
+//   font-style: normal;
+//   font-display: swap;
+// }

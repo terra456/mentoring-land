@@ -1,0 +1,56 @@
+@use "../mixins/typography" as *;
+@use "../mixins/utils" as *;
+@use "../base/variables" as *;
+
+.solution {
+  &_conteiner {
+    margin: 0 115px;
+
+    @media (width < $to-tablet-width) {
+      margin: 0;
+    }
+  }
+
+  & .swiper {
+    overflow: visible;
+  }
+
+  &_slide {
+    height: 100%;
+    padding: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: var(--card-shadow);
+
+    @media (width < $to-mobile-width) {
+      padding: 24px 16px;
+      flex-direction: column;
+    }
+  }
+
+  &_item {
+    max-width: 300px;
+    width: calc((100% - 100px) / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+
+    @media (width < $to-mobile-width) {
+      max-width: none;
+      width: 100%;
+      gap: 16px;
+    }
+  }
+
+  &_desc {
+    @include body-regular;
+
+    padding-bottom: 24px;
+  }
+}
