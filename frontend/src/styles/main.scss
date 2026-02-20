@@ -10,33 +10,29 @@
 
 // Импорт layout (только используемые)
 @use "layout/section";
-@use "layout/about";
-@use "layout/chart";
+@use "layout/advice";
 @use "layout/cookie";
+@use "layout/glass";
 @use "layout/first";
 @use "layout/footer";
 @use "layout/form";
 @use "layout/header";
 @use "layout/modal";
-@use "layout/review";
-@use "layout/request";
-@use "layout/solution";
+@use "layout/next-step";
 @use "layout/swiper";
-@use "layout/work";
 
 // Страницы
 @use "pages/consent";
 @use "pages/not-found";
 
 // Импорт шрифтов
-@use "fonts/tektur" as tektur;
-@use "fonts/inter" as inter;
+@use "base/fonts";
 
 // Глобальные стили
 body {
   display: flex;
   flex-direction: column;
-  font-family: Inter, sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 18px;
   line-height: normal;
   color: var(--body-text-200);

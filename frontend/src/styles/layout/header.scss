@@ -6,9 +6,9 @@
 
   position: sticky;
   top: 24px;
-  padding: 32px 24px 24px;
+  padding: 24px;
   margin: 0 auto;
-  max-width: calc(var(--desctop-width));
+  max-width: calc(var(--desctop-width) - 2 * var(--desctop-padding));
   width: calc(100% - 2 * var(--desctop-padding));
   border:
     rgb(255 255 255 / 5%),

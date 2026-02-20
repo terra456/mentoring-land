@@ -3,292 +3,108 @@
 @use "../base/variables" as *;
 
 .first {
-  --first-height: 782px;
+  --first-height: 946px;
 
-  margin-top: 57px;
-  margin-bottom: 104px;
+  margin-top: 150px;
+
+  //   margin-bottom: 104px;
   height: var(--first-height);
-  overflow: hidden;
-
-  @media (width < $minidesc-width) {
-    --first-height: 567px;
-  }
-
-  @media (width < $to-tablet-width) {
-    --first-height: 567px;
-
-    margin-top: 20px;
-    margin-bottom: 70px;
-  }
-
-  @media (width < $to-mobile-width) {
-    --first-height: 700px;
-  }
-
-  &_bg {
-    padding-bottom: 0;
-    background-repeat: no-repeat;
-    background-image: url("/assets/images/first-bg-desk-1.webp");
-    background-size: contain;
-    background-position: right 10px top;
-
-    @media (width < $minidesc-width) {
-      background-position: left 95% top;
-    }
-
-    @media (width < 1150px) {
-      background-position: right -15% top;
-    }
-
-    @media (width < $to-tablet-width) {
-      background-image: url("/assets/images/first-bg-tablet-1.webp");
-      background-position: right 5% top;
-    }
-
-    @media (width < 946px) {
-      background-position: left 510px top;
-    }
-
-    @media (width < $to-mobile-width) {
-      background-image: url("/assets/images/first-bg-mobile-1.webp");
-      background-size: 340px;
-      background-position: right 0 top 15px;
-    }
-
-    @media (width < 520px) {
-      background-position: left 190px top 15px;
-    }
-  }
+  padding: 115px 0;
+  background-image: url("/assets/images/glass.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
 
   &_conteiner {
-    height: var(--first-height);
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-between;
-
-    @media (width < $to-mobile-width) {
-      flex-direction: column;
-    }
+    height: calc(var(--first-height) - 115px * 2);
+    padding: 15px 165px 15px 0;
   }
 
-  &_info {
-    width: 700px;
-    flex-shrink: 0;
-    margin-top: -20px;
+  //     height: var(--first-height);
+  //     display: flex;
+  //     flex-flow: row nowrap;
+  //     align-items: center;
+  //     justify-content: space-between;
 
-    @media (width < $to-tablet-width) {
-      width: 500px;
-      margin-top: 30px;
-    }
+  //     @media (width < $to-mobile-width) {
+  //       flex-direction: column;
+  //     }
+  //   }
 
-    @media (width < $to-mobile-width) {
-      width: 100%;
-      margin-top: 225px;
-    }
-  }
+  //   &_info {
+  //     width: 700px;
+  //     flex-shrink: 0;
+  //     margin-top: -20px;
+
+  //     @media (width < $to-tablet-width) {
+  //       width: 500px;
+  //       margin-top: 30px;
+  //     }
+
+  //     @media (width < $to-mobile-width) {
+  //       width: 100%;
+  //       margin-top: 225px;
+  //     }
+  //   }
 
   &_title {
-    @include h1-56-extra-bold;
-
     padding-bottom: 16px;
+    font-family: var(--header-font);
+    font-size: 60px;
+    font-weight: 500;
+    color: var(--text-dark);
 
-    @media (width < $to-mobile-width) {
-      max-width: 340px;
-      padding-bottom: 24px;
-    }
+    // @media (width < $to-mobile-width) {
+    //   max-width: 340px;
+    //   padding-bottom: 24px;
+    // }
   }
 
-  &_desc {
-    @include body-24-regular;
+  &_subtitle {
+    padding-bottom: 32px;
+    font-family: var(--header-font);
+    font-size: 52px;
+    font-weight: 500;
+    color: var(--text-dark);
 
-    padding-bottom: 60px;
-
-    @media (width < $to-tablet-width) {
-      padding-bottom: 40px;
-    }
-
-    @media (width < $to-mobile-width) {
-      @include body-18-regular;
-
-      padding-bottom: 32px;
-    }
+    // @media (width < $to-mobile-width) {
+    //   max-width: 340px;
+    //   padding-bottom: 24px;
+    // }
   }
 
-  &_cost {
-    @include body-regular;
-
-    color: var(--body-text-100);
-
-    @media (width < $to-tablet-width) {
-      padding-bottom: 16px;
-      gap: 8px;
-    }
-  }
-
-  &_price {
-    color: var(--blue-500);
-    font-family: var(--font-heading);
+  &_desk {
+    padding-bottom: 32px;
+    font-family: var(--body-font);
     font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 110%;
-    margin-bottom: 1px;
-    white-space: nowrap;
+    font-weight: 400;
+    color: var(--text-dark);
 
-    @media (width < $to-tablet-width) {
-      font-size: 24px;
-    }
+    //     @media (width < $to-tablet-width) {
+    //       padding-bottom: 40px;
+    //     }
 
-    @media (width < $to-mobile-width) {
-      font-weight: 700;
-    }
+    //     @media (width < $to-mobile-width) {
+    //       @include body-18-regular;
+
+    //       padding-bottom: 32px;
+    //     }
+    //   }
   }
 
-  &_cards {
-    width: 40%;
-    flex-shrink: 0;
-    display: flex;
-    justify-content: center;
-
-    @media (width < $tablet-width) {
-      @include visually-hidden;
-    }
+  &_text {
+    padding-bottom: 60px;
+    font-family: var(--body-font);
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text-medium);
   }
 
-  &_list {
-    position: relative;
-    width: 600px;
-    list-style-type: none;
-    margin: 0;
-    height: var(--first-height);
-
-    &:hover > .first_item {
-      animation-play-state: paused;
-    }
-  }
-
-  @media (width >= $minidesc-width) {
-    --animation-time: 25s;
-    --x-begin: 350px;
-    --x-end: -70px;
-    --big-opacity: 1;
-  }
-
-  @media (width < $minidesc-width) {
-    --animation-time: 25s;
-    --x-begin: 200px;
-    --x-end: -225px;
-    --big-opacity: 0;
-  }
-
-  @media (width < $to-tablet-width) {
-    --animation-time: 20s;
-    --x-begin: 130px;
-    --x-end: -30px;
-    --big-opacity: 1;
-  }
-
-  // animatiion only on max screens
-  @media (width >= $tablet-width) {
-    --items: 10; /* общее количество карточек для расчёта шага */
-    --step: calc(var(--animation-time) / var(--items)); /* шаг задержки между элементами */
-
-    /* Сделаем поток в одной колонке: расположим элементы абсолютно и анимируем трансформацией Y */
-    &_item {
-      position: absolute;
-      will-change: transform, opacity;
-      animation-name: first-item-fall;
-      animation-duration: var(--animation-time);
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      opacity: 0;
-
-      /* Сдвиг по времени для равномерного потока. Количество и шаг можно корректировать */
-      &:nth-child(1) {
-        animation-delay: calc(var(--step) * -0);
-      }
-
-      &:nth-child(2) {
-        animation-delay: calc(var(--step) * -1);
-      }
-
-      &:nth-child(3) {
-        animation-delay: calc(var(--step) * -2);
-      }
-
-      &:nth-child(4) {
-        animation-delay: calc(var(--step) * -3);
-      }
-
-      &:nth-child(5) {
-        animation-delay: calc(var(--step) * -4);
-      }
-
-      &:nth-child(6) {
-        animation-delay: calc(var(--step) * -5);
-      }
-
-      &:nth-child(7) {
-        animation-delay: calc(var(--step) * -6);
-      }
-
-      &:nth-child(8) {
-        animation-delay: calc(var(--step) * -7);
-      }
-
-      &:nth-child(9) {
-        animation-delay: calc(var(--step) * -8);
-      }
-
-      &:nth-child(10) {
-        animation-delay: calc(var(--step) * -9);
-      }
-    }
-
-    /* Ключевые кадры: карточка появляется сверху, плавно проходит зону и уходит вниз */
-    @keyframes first-item-fall {
-      0% {
-        transform: translate(var(--x-begin), -500%);
-        opacity: 0;
-      }
-
-      30% {
-        opacity: 0;
-      }
-
-      35% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 1;
-      }
-
-      70% {
-        opacity: 1;
-      }
-
-      75% {
-        opacity: var(--big-opacity);
-      }
-
-      80% {
-        opacity: var(--big-opacity);
-      }
-
-      85% {
-        opacity: 0;
-      }
-
-      90% {
-        opacity: 0;
-      }
-
-      100% {
-        transform: translate(var(--x-end), 1200%);
-        opacity: 0;
-      }
-    }
+  &_subtext {
+    padding-bottom: 32px;
+    font-family: var(--body-font);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-medium);
   }
 }

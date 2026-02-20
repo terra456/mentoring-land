@@ -1,0 +1,16 @@
+.glass {
+  &_conteiner {
+    padding: 40px;
+    padding-right: 100px;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 12px;
+  }
+
+  &_subconteiner {
+    padding: 16px;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 12px;
+  }
+}
