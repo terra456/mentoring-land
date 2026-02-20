@@ -4,14 +4,17 @@
 .header {
   @include flex-between;
 
+  position: sticky;
+  top: 24px;
   padding: 32px 24px 24px;
   margin: 0 auto;
   max-width: calc(var(--desctop-width));
   width: calc(100% - 2 * var(--desctop-padding));
+  border:
+    rgb(255 255 255 / 5%),
+    solid 1px;
   border-radius: 10px;
-  background: var(--white);
-
-  /* for card */
+  background-color: var(--white);
   box-shadow: var(--card-shadow);
 
   @media (width < $to-tablet-width) {
@@ -91,6 +94,13 @@
         animation-timing-function: ease-in;
       }
     }
+  }
+
+  &_sublist {
+    list-style: none;
+    position: absolute;
+    border-radius: 12px;
+    background-color: var(--white);
   }
 
   &_item {

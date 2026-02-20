@@ -3,101 +3,45 @@
 @use "../base/variables" as *;
 
 .modal {
-  position: relative;
-  width: 670px;
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  background: var(--white);
-  box-shadow: var(--card-shadow);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
 
-  @media (width < $to-tablet-width) {
-    width: 532px;
-    padding: 32px;
-    gap: 24px;
-  }
-
-  @media (width < $to-mobile-width) {
-    width: 343px;
-    padding: 24px 16px;
-    max-width: calc(100% - (var(--mobile-padding) * 2));
-    gap: 16px;
+  &.active {
+    display: block;
   }
 
   &_overlay {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 1000;
-    width: 100dvw;
-    height: 100dvh;
-    display: none; // hidden by default
-    align-items: center;
-    justify-content: center;
-    background: var(--dark-blue-90060, rgb(3 15 37 / 60%));
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 180ms ease;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 70%);
+    animation: fade-in 0.3s ease;
   }
 
-  // visible state
-  &_overlay.modal_open {
-    display: flex;
-    opacity: 1;
-    pointer-events: auto;
+  &_container {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    margin: 5vh auto;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    animation: slide-in 0.3s ease;
+    z-index: 1001;
   }
 
-  &_img-conteiner {
-    display: flex;
-    width: 220px;
-    height: 220px;
-    justify-content: center;
-    align-items: center;
-    aspect-ratio: 1/1;
-
-    @media (width < $to-tablet-width) {
-      width: 180px;
-      height: 180px;
-    }
-
-    @media (width < $to-mobile-width) {
-      width: 120px;
-      height: 120px;
-    }
-  }
-
-  &_title {
-    @include accent-body-24-bold;
-
-    color: #1f2937;
-    text-align: center;
-
-    @media (width < $to-tablet-width) {
-      font-size: 20px;
-    }
-
-    @media (width < $to-mobile-width) {
-      font-size: 18px;
-    }
-  }
-
-  &_desc {
-    @include body-24-regular;
-
-    color: #1f2937;
-    text-align: center;
-
-    @media (width < $to-tablet-width) {
-      font-size: 18px;
-    }
-
-    @media (width < $to-mobile-width) {
-      font-size: 16px;
-    }
+  &_content {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(90vh - 80px);
   }
 
   &_close-btn {
@@ -107,5 +51,28 @@
     width: 24px;
     height: 24px;
     background: url("/assets/icon/cross.svg");
+  }
+}
+
+/* Анимации */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
