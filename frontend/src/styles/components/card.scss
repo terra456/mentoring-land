@@ -3,11 +3,135 @@
 .card {
   padding: 32px;
   background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
 
-  &_imgage {
+  @media (width < $to-tablet-width) {
+    padding: 24px;
+  }
+
+  &_image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 80px;
     height: 80px;
+    margin: 14px 0 32px 14px;
     border-radius: 16px;
-    border: 1px solid black;
+
+    @media (width < $to-tablet-width) {
+      margin-bottom: 24px;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      box-shadow: var(--drop-shadow);
+    }
+
+    &::before {
+      top: -14px;
+      left: -14px;
+      z-index: 0;
+      background-image: var(--liner-blue-2);
+    }
+
+    &--orange::before {
+      background-image: var(--liner-orange-light-icon);
+    }
+
+    &::after {
+      top: 0;
+      left: 0;
+      z-index: 1;
+      border: 1px solid rgb(255 255 255 / 10%);
+      backdrop-filter: blur(10px);
+    }
+
+    &:hover::before {
+      transform-origin: center;
+      transform: rotate(-20deg);
+    }
+  }
+
+  &_img {
+    width: 52px;
+    height: 52px;
+    z-index: 10;
+    background-image: url("/assets/icon/img-icon.svg");
+    background-size: 776px 92px;
+    background-repeat: no-repeat;
+
+    &--hat {
+      background-position: calc((0 * 52px) - 20px) center;
+    }
+
+    &--person {
+      background-position: calc(((1 * 76px) + 20px) * (-1)) center;
+    }
+
+    &--bag {
+      background-position: calc(((2 * 76px) + 20px) * (-1)) center;
+    }
+
+    &--folder {
+      background-position: calc(((3 * 76px) + 20px) * (-1)) center;
+    }
+
+    &--file {
+      background-position: calc(((6 * 76px) + 20px) * (-1)) center;
+    }
+
+    &--persons {
+      background-position: calc(((4 * 76px) + 20px) * (-1)) center;
+    }
+
+    &--heart-plus {
+      background-position: calc(((5 * 76px) + 20px) * (-1)) center;
+    }
+
+    &--bild {
+      background-position: calc(((7 * 76px) + 20px) * (-1)) center;
+    }
+
+    &--star {
+      background-position: calc(((8 * 76px) + 20px) * (-1)) center;
+    }
+
+    &--heart {
+      background-position: calc(((9 * 76px) + 20px) * (-1)) center;
+    }
+  }
+
+  &_title {
+    margin-bottom: 8px;
+    font-family: var(--body-font);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-dark);
+
+    @media (width < $to-tablet-width) {
+      font-size: 20px;
+    }
+
+    @media (width < $to-mobile-width) {
+      font-size: 18px;
+    }
+  }
+
+  &_text {
+    font-family: var(--body-font);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-medium);
+
+    @media (width < $to-tablet-width) {
+      font-size: 16px;
+    }
   }
 }

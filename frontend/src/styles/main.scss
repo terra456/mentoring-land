@@ -11,15 +11,30 @@
 // Импорт layout (только используемые)
 @use "layout/section";
 @use "layout/advice";
+@use "layout/approach";
 @use "layout/cookie";
+@use "layout/delusion";
 @use "layout/glass";
+@use "layout/doubt";
 @use "layout/first";
 @use "layout/footer";
 @use "layout/form";
 @use "layout/header";
+@use "layout/history";
+@use "layout/mentor";
 @use "layout/modal";
+@use "layout/marquee";
 @use "layout/next-step";
+@use "layout/questions";
+@use "layout/result";
+@use "layout/reviews";
 @use "layout/swiper";
+@use "layout/social";
+@use "layout/tarif";
+@use "layout/task";
+@use "layout/case";
+@use "layout/whom";
+@use "layout/work";
 
 // Страницы
 @use "pages/consent";
@@ -39,6 +54,10 @@ body {
   min-height: 100vh;
   overflow-y: scroll;
   background-color: var(--color-background);
+
+  @media screen and (width <= 600px) {
+    font-size: 16px;
+  }
 }
 
 main {

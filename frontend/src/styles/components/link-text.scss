@@ -1,10 +1,12 @@
 .link-nav {
-  color: gray;
+  font-family: var(--body-text);
+  font-size: 16px;
+  font-weight: 400px;
+  color: var(--text-medium);
 
   &:hover,
-  &:focus,
-  &:active {
-    color: var(--blue-500);
+  &:focus {
+    color: var(--accent-orange);
   }
 }
 

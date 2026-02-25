@@ -1,0 +1,116 @@
+@use "../base/variables" as *;
+
+.questions {
+  &_list {
+    max-width: 792px;
+    width: 100%;
+
+    @media (width < $minidesc-width) {
+      max-width: 100%;
+    }
+  }
+
+  &_item {
+    list-style: none;
+  }
+
+  &_summary {
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 16px;
+    list-style: none; /* Для Firefox/Safari */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text-dark);
+
+    @media (width < $to-tablet-width) {
+      // padding-bottom: ;
+      font-size: 18px;
+    }
+
+    @media (width < $to-mobile-width) {
+      padding-bottom: 18px;
+      padding-right: 40px;
+      font-size: 16px;
+    }
+
+    &::-webkit-details-marker {
+      display: none; /* Для Chrome/Safari */
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 20px;
+      right: 0;
+      mask-image: url("/assets/icon/mark.svg");
+      mask-position: center;
+      mask-repeat: no-repeat;
+      background-color: var(--text-dark);
+      transform: scaleY(-1);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  &_content_wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &_content {
+    overflow: hidden;
+    min-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.3s ease 0.1s,
+      transform 0.3s ease 0.1s;
+  }
+
+  &_details {
+    padding: 32px 16px 24px 0;
+    border-bottom: 1px solid var(--light-grey);
+    overflow: hidden;
+
+    @media (width < $to-tablet-width) {
+      padding: 24px 16px 16px 0;
+    }
+
+    @media (width < $to-tablet-width) {
+      padding: 16px 16px 8px 0;
+    }
+
+    &[open] {
+      & .questions_summary::after {
+        transform: scaleY(1);
+        background-color: var(--accent-orange);
+      }
+
+      & .questions_content_wrapper {
+        grid-template-rows: 1fr;
+      }
+
+      & .questions_content {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &_answer {
+    padding-bottom: 24px;
+    font-size: 18px;
+    color: var(--text-medium);
+
+    @media (width < $to-tablet-width) {
+      padding-bottom: 16px;
+      font-size: 16px;
+    }
+  }
+}

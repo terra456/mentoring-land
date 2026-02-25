@@ -1,0 +1,104 @@
+@use "../base/variables" as *;
+
+.result {
+  &_conteiner {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  &_card {
+    width: calc(100% - 24px * 2);
+    display: flex;
+    flex-flow: row wrap;
+    place-content: stretch flex-start;
+    align-items: stretch;
+  }
+
+  &_item {
+    width: 100%;
+
+    &:not(:last-child) {
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--light-grey);
+    }
+
+    &:not(:first-child) {
+      padding-top: 32px;
+    }
+  }
+
+  &_title {
+    padding-bottom: 16px;
+
+    &--was {
+      color: var(--text-light);
+    }
+
+    &--made {
+      color: var(--text-medium);
+    }
+
+    &--res {
+      color: var(--accent-orange);
+    }
+  }
+
+  &_desk--3 {
+    min-height: 63px;
+  }
+
+  &_numbers {
+    padding-bottom: 140px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+    justify-content: center;
+
+    @media (width < $to-tablet-width) {
+      padding-bottom: 100px;
+    }
+
+    @media (width < $to-mobile-width) {
+      flex-flow: row-reverse wrap;
+      gap: 32px;
+    }
+  }
+
+  &_number-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:first-child {
+      @media (width < $to-mobile-width) {
+        order: 3;
+      }
+    }
+  }
+
+  &_number-count {
+    padding-bottom: 8px;
+    font-size: 60px;
+    font-weight: 600;
+    background-image: var(--liner-blue-2);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    @media (width < $to-tablet-width) {
+      font-size: 52px;
+    }
+  }
+
+  &_number-desk {
+    @media (width < $to-tablet-width) {
+      font-size: 16px;
+    }
+
+    @media (width < $to-mobile-width) {
+      font-size: 14px;
+    }
+  }
+}

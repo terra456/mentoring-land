@@ -11,10 +11,18 @@
   --text-light: #94a3b8;
   --light-grey: #d9d9d9;
   --bg: #f5f5f7;
+  --blue-600: #1400fd;
+  --blue-400: #3960fe;
+  --light-blue: #38bdf8;
+  --liner-blue: linear-gradient(125deg, #38bdf8 0%, #1400ff 80%);
+  --liner-blue-2: linear-gradient(315deg, #1400ff 0%, #38bdf8 80%);
+  --liner-orange-light: linear-gradient(45deg, #ff5c00 0%, #ff8a3d 100%);
+  --liner-orange-light-icon: linear-gradient(315deg, #ff5c00 0%, #ffa13d 100%);
+  --card-shadow: 0 4px 20px 0 rgb(193 193 193 / 30%);
+  --drop-shadow: 0 6.58px 16.46px 0 rgb(0 0 0 / 15%);
+  --for-icon: inset 1.4px -1.4px 1.4px 0 rgb(0 0 0 / 10%);
 
   // Цветовая палитра (из макета)
-  --blue-500: #2e6ce6;
-  --blue-100: #eaf1ff;
   --green-600: #11813a;
   --green-100: #dcfce7;
   --green-500: #18cc73;
@@ -32,7 +40,6 @@
   --liner-orange: linear-gradient(90deg, #fae715 0%, #fa6e32 33.17%);
   --bg-card: linear-gradient(180deg, rgb(47 128 237 / 6%) 26.45%, rgb(27 73 135 / 1%) 100%);
   --liner: linear-gradient(90deg, #85a7eb 0%, #1956cd 100%);
-  --card-shadow: 0 4px 24px 0 rgb(13 29 61 / 10%);
   --icon-shadow: 1px 1px 5px 0 rgb(13 29 61 / 30%);
   --desctop-width: #{$desctop-width};
   --tablet-width: #{$tablet-width};

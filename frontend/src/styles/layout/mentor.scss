@@ -1,0 +1,19 @@
+@use "../base/variables" as *;
+
+.mentor {
+  &_conteiner {
+    display: flex;
+    flex-flow: row wrap;
+    place-content: stretch space-between;
+    align-items: stretch;
+    gap: 24px;
+
+    & > .card {
+      width: calc((100% - 24px) / 2);
+
+      @media (width < $to-mobile-width) {
+        width: 100%;
+      }
+    }
+  }
+}

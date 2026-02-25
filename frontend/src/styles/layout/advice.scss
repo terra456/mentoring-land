@@ -1,3 +1,5 @@
+@use "../base/variables" as *;
+
 .advice_text {
   max-width: 750px;
   padding-bottom: 40px;
@@ -6,4 +8,12 @@
   font-weight: 400;
   color: var(--text-dark);
   text-align: center;
+
+  @media (width < $to-tablet-width) {
+    font-size: 24px;
+  }
+
+  @media (width < $to-mobile-width) {
+    font-size: 20px;
+  }
 }

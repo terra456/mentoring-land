@@ -1,0 +1,83 @@
+@use "../base/variables" as *;
+
+.work {
+  &_list {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    place-content: stretch center;
+    align-items: stretch;
+    gap: 24px;
+
+    @media (width < $to-mobile-width) {
+      gap: 16px;
+    }
+  }
+
+  &_item {
+    position: relative;
+    display: block;
+    width: calc((100% - 2 * 24px) / 3);
+    height: 173px;
+    padding: 24px;
+    padding-top: 72px;
+    background-color: #fff;
+    box-shadow: var(--card-shadow);
+    border-radius: 12px;
+
+    @media (width < $to-tablet-width) {
+      width: calc((100% - 24px) / 2);
+      height: auto;
+    }
+
+    @media (width < $to-mobile-width) {
+      width: 100%;
+    }
+
+    &:nth-child(1) {
+      --number: "01";
+    }
+
+    &:nth-child(2) {
+      --number: "02";
+    }
+
+    &:nth-child(3) {
+      --number: "03";
+    }
+
+    &:nth-child(4) {
+      --number: "04";
+    }
+
+    &:nth-child(5) {
+      --number: "05";
+    }
+
+    &::before,
+    &::after {
+      content: var(--number);
+      position: absolute;
+      font-family: var(--header-font);
+      font-weight: 400;
+    }
+
+    &::before {
+      top: 24px;
+      left: 24px;
+      font-size: 32px;
+      background-image: var(--liner-blue-2);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    &::after {
+      top: 0;
+      right: 24px;
+      font-size: 60px;
+      color: var(--light-blue);
+      opacity: 0.1;
+    }
+  }
+}

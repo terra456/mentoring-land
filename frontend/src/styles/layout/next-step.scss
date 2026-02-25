@@ -1,3 +1,5 @@
+@use "../base/variables" as *;
+
 .next-step {
   &_conteiner {
     display: flex;
@@ -5,9 +7,32 @@
     align-items: center;
     justify-content: center;
     gap: 24px;
+    margin-bottom: 60px;
 
     & > .card {
       width: calc((100% - 24px) / 2);
+
+      @media (width < $to-tablet-width) {
+        max-width: 100%;
+        width: 592px;
+      }
+    }
+
+    @media (width < $to-tablet-width) {
+      max-width: 100%;
+      flex-direction: column;
+      margin-bottom: 40px;
+    }
+  }
+
+  &_text {
+    margin-top: 24px;
+    margin-bottom: 60px;
+    text-align: center;
+
+    @media (width < $to-mobile-width) {
+      margin-top: 16px;
+      margin-bottom: 40px;
     }
   }
 }

@@ -1,8 +1,12 @@
 @use "../base/variables" as *;
 
 .section {
+  max-width: 100dvw;
+  overflow: hidden;
+
   &_wrapper {
     max-width: calc(var(--desctop-width) + 2 * var(--desctop-padding));
+    width: var(--desctop-width);
     padding: 0 var(--desctop-padding);
     padding-bottom: 140px;
     margin: 0 auto;
@@ -10,10 +14,22 @@
     flex-direction: column;
     align-items: center;
 
-    // @media (width < $to-mobile-width) {
-    //   padding: 0 var(--mobile-padding);
-    //   padding-bottom: 80px;
-    // }
+    @media (width < $desctop-width) {
+      max-width: 100%;
+      width: 100%;
+      padding: 0 var(--tablet-padding);
+      padding-bottom: 140px;
+    }
+
+    @media (width < $to-tablet-width) {
+      padding: 0 var(--tablet-padding);
+      padding-bottom: 100px;
+    }
+
+    @media (width < 748px) {
+      padding: 0 var(--mobile-padding);
+      padding-bottom: 80px;
+    }
   }
 
   &_title {
@@ -26,15 +42,21 @@
 
     &:has(+ .section_subtitle) {
       padding-bottom: 24px;
+
+      @media (width < $to-mobile-width) {
+        padding-bottom: 16px;
+      }
     }
 
-    // @media (width < $to-tablet-width) {
-    //   padding-bottom: 16px;
-    // }
+    @media (width < $to-tablet-width) {
+      padding-bottom: 80px;
+      font-size: 42px;
+    }
 
-    // @media (width < $to-mobile-width) {
-    //   padding-bottom: 16px;
-    // }
+    @media (width < $to-mobile-width) {
+      font-size: 24px;
+      padding-bottom: 60px;
+    }
   }
 
   &_subtitle {
@@ -46,10 +68,22 @@
     color: var(--text-medium);
     text-align: center;
 
-    // @media (width < $to-mobile-width) {
-    //   font-size: 16px;
-    //   padding-bottom: 40px;
-    // }
+    @media (width < $to-tablet-width) {
+      font-size: 16px;
+    }
+
+    @media (width < $to-mobile-width) {
+      font-size: 14px;
+      padding-bottom: 60px;
+    }
+
+    &:has(+ .section_subtitle) {
+      padding-bottom: 16px;
+    }
+
+    &--last {
+      padding-bottom: 0;
+    }
   }
 
   &_body-title {
@@ -57,6 +91,14 @@
     font-size: 24px;
     font-weight: 600;
     color: var(--text-dark);
+
+    @media (width < $to-tablet-width) {
+      font-size: 20px;
+    }
+
+    @media (width < $to-mobile-width) {
+      font-size: 18px;
+    }
   }
 
   &_text {
@@ -64,5 +106,17 @@
     font-size: 18px;
     font-weight: 400;
     color: var(--text-medium);
+
+    &--dark {
+      color: var(--text-dark);
+    }
+
+    @media (width < $to-tablet-width) {
+      font-size: 16px;
+    }
+
+    // @media (width < $to-mobile-width) {
+    //   font-size: 14px;
+    // }
   }
 }

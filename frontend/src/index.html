@@ -54,46 +54,71 @@
     >
   </head>
   <body>
+    <svg style="display: none">
+      <filter id="glass-refraction">
+        <!-- Refraction: масштаб искажения (80) -->
+        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="80"/>
+      </filter>
+    </svg>
     <load src="partials/header.html"/>
 
     <main role="main">
       <section class="section first">
-        <div class="section_wrapper">
-          <div class="first_conteiner">
-            <div class="glass_conteiner">
-              <div class="glass_subconteiner">
-                <h1 class="first_title">Переходи в IT-менеджмент</h1>
-                <h2 class="first_subtitle">Твой прошлый опыт — твоё преимущество</h2>
-                <p class="first_desk">
-                  Я&nbsp;помогаю войти в&nbsp;профессию, вырасти в&nbsp;PM&nbsp;или сменить
-                  направление&nbsp;— без обнуления опыта и&nbsp;хаотичных попыток
-                </p>
-                <p class="first_text">
-                  Неважно с какой точки вы стартуете — важен понятный следующий шаг
-                </p>
-                <div class="btn_conteiner">
-                  <btn class="btn btn_first">Бесплатная консультация</btn>
-                  <btn class="btn btn_second btn--tg">Написать в телеграм</btn>
-                </div>
-                <p class="first_subtext">Честно оценю шансы и покажу маршрут</p>
-              </div>
+        <div class="first_conteiner">
+          <div class="first_subconteiner">
+            <h1 class="first_title">Переходи в IT-менеджмент</h1>
+            <h2 class="first_subtitle">Твой прошлый опыт — твоё преимущество</h2>
+            <p class="first_desk">
+              Я&nbsp;помогаю войти в&nbsp;профессию, вырасти в&nbsp;PM&nbsp;или сменить
+              направление&nbsp;— без обнуления опыта и&nbsp;хаотичных попыток
+            </p>
+            <p class="first_text">
+              Неважно с какой точки вы стартуете — важен понятный следующий шаг
+            </p>
+            <div class="btn_conteiner">
+              <btn class="btn btn--primary">Бесплатная консультация</btn>
+              <btn class="btn btn--secondary btn--tg">Написать в телеграм</btn>
             </div>
+            <p class="first_subtext">Честно оценю шансы и покажу маршрут</p>
           </div>
         </div>
       </section>
       <div class="marquee">
-        <p class="marquee_desk">
-          <span class="marquee_count">85% </span>менти получают оффер за 2-3 месяца
-        </p>
-        <p class="marquee_desk">
-          <span class="marquee_count">4.9</span>средняя оценка сессий
-        </p>
-        <p class="marquee_desk">
-          <span class="marquee_count">47+</span>бесплатных консультаций за месяц
-        </p>
-        <p class="marquee_desk">
-          <span class="marquee_count">12</span>менти сейчас в активной работе
-        </p>
+        <div class="section_wrapper">
+          <div class="marquee_container">
+            <div class="marquee_content">
+              <div class="marquee_group">
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">85% </span>менти получают оффер за 2-3 месяца
+                </p>
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">4.9 </span>средняя оценка сессий
+                </p>
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">47+ </span>бесплатных консультаций за месяц
+                </p>
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">12 </span>менти сейчас в активной работе
+                </p>
+              </div>
+              <div class="marquee_group" aria-hidden="true" hidden>
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">85% </span>менти получают оффер за 2-3 месяца
+                </p>
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">4.9 </span>средняя оценка сессий
+                </p>
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">47+ </span>бесплатных консультаций за месяц
+                </p>
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">12 </span>менти сейчас в активной работе
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <section id="advice" class="section advice" aria-labelledby="advice-title">
         <div class="section_wrapper">
@@ -102,7 +127,7 @@
             За 30 минут покажу, почему HR вас не выбирают, и&nbsp;что&nbsp;нужно&nbsp;изменить,
             чтобы получать отклики
           </p>
-          <button class="btn btn_text btn--arrow">Записаться</button>
+          <button class="btn btn--text btn--arrow">Записаться</button>
         </div>
       </section>
       <section id="whom" class="section whom" aria-labelledby="whom-title">
@@ -110,19 +135,21 @@
           <h2 id="whom-title" class="section_title">Кому подойдёт</h2>
           <div class="whom_conteiner">
             <div class="whom_column">
-              <h3 class="section_body-title">Я не в IT, но хочу войти в менеджмент</h3>
-              <ul class="whom_list whom_list--orange">
+              <h3 class="section_body-title whom_title">Я не в IT, но хочу войти в менеджмент</h3>
+              <ul class="whom_list">
                 <li class="whom_item">Не понимаю с чего начать</li>
                 <li class="whom_item">Нет технического бэкграунда</li>
                 <li class="whom_item">Сомневаюсь, что мой прошлый опыт подойдёт</li>
               </ul>
             </div>
             <div class="whom_column">
-              <h3 class="section_body-title">Я уже в IT и хочу расти</h3>
+              <h3 class="section_body-title whom_title">Я уже в IT и хочу расти</h3>
               <ul class="whom_list whom_list--blue">
-                <li class="whom_item">Хочу вырасти или сменить роль</li>
-                <li class="whom_item">Планирую переход в менеджмент</li>
-                <li class="whom_item">Готовлюсь к офферу и росту стоимости на рынке</li>
+                <li class="whom_item whom_item--blue">Хочу вырасти или сменить роль</li>
+                <li class="whom_item whom_item--blue">Планирую переход в менеджмент</li>
+                <li class="whom_item whom_item--blue">
+                  Готовлюсь к офферу и росту стоимости на рынке
+                </li>
               </ul>
             </div>
           </div>
@@ -137,25 +164,25 @@
           <div class="next-step_conteiner">
             <div class="card">
               <div class="card_image">
-                <img class="card_img">
+                <div class="card_img card_img--hat"></div>
               </div>
-              <h3 class="section_body-title">Первая работа в PM</h3>
-              <p class="section_text">
+              <h3 class="card_title">Первая работа в PM</h3>
+              <p class="card_text">
                 Вы&nbsp;учитесь или уже пробовали войти в&nbsp;профессию, но&nbsp;рынок
                 не&nbsp;реагирует.
               </p>
-              <p class="section_text">
+              <p class="card_text">
                 Разберём ваш опыт и&nbsp;превратим его в&nbsp;профиль, который понимают рекрутеры
                 и&nbsp;нанимающие менеджеры.
               </p>
             </div>
             <div class="card">
               <div class="card_image">
-                <img class="card_img">
+                <div class="card_img card_img--person"></div>
               </div>
-              <h3 class="section_body-title">Рост для Junior и Middle PM</h3>
-              <p class="section_text">Вы&nbsp;уже в&nbsp;IT, но&nbsp;рост замедлился.</p>
-              <p class="section_text">
+              <h3 class="card_title">Рост для Junior и Middle PM</h3>
+              <p class="card_text">Вы&nbsp;уже в&nbsp;IT, но&nbsp;рост замедлился.</p>
+              <p class="card_text">
                 Упакуем ваш реальный вклад в&nbsp;цифры, решения и&nbsp;бизнес-результаты, чтобы
                 вы&nbsp;росли в&nbsp;уровне, доходе и&nbsp;чувствовали себя уверенно
                 на&nbsp;собеседованиях.
@@ -163,35 +190,25 @@
             </div>
             <div class="card">
               <div class="card_image">
-                <img class="card_img">
+                <div class="card_img card_img--bag"></div>
               </div>
-              <h3 class="section_body-title">Переход в PM из другой сферы</h3>
-              <p class="section_text">
+              <h3 class="card_title">Переход в PM из другой сферы</h3>
+              <p class="card_text">
                 Вы&nbsp;не&nbsp;из&nbsp;PM&nbsp;или даже
                 не&nbsp;из&nbsp;IT&nbsp;и&nbsp;сомневаетесь, что ваш опыт кому-то&nbsp;нужен.
               </p>
-              <p class="section_text">
+              <p class="card_text">
                 Покажу, как превратить прошлую карьеру в&nbsp;конкурентное преимущество
                 и&nbsp;перейти в&nbsp;IT-менеджмент без обнуления.
               </p>
             </div>
           </div>
           <p class="section_text section_text--dark">Не уверены с чего начинать?</p>
-          <p class="section_text">
+          <p class="section_text next-step_text">
             Начните с бесплатной консультации — разберём вашу ситуацию и определим самый короткий
             путь
           </p>
-          <button class="btn btn_second">Записаться на консультацию</button>
-        </div>
-      </section>
-      <section id="advice" class="section advice" aria-labelledby="advice-title">
-        <div class="section_wrapper">
-          <h2 id="advice-title" class="section_title">Бесплатная карьерная консультация</h2>
-          <p class="section_subtitle">
-            За 30 минут покажу, почему HR вас не выбирают,и что нужно изменить, чтобы получать
-            отклики
-          </p>
-          <button class="btn btn_text btn--arrow">Записаться</button>
+          <button class="btn btn--primary">Записаться на консультацию</button>
         </div>
       </section>
       <section id="history" class="section history" aria-labelledby="history-title">
@@ -199,17 +216,17 @@
           <h2 id="history-title" class="section_title">Ваша история — ваше преимущество</h2>
           <div class="history_conteiner">
             <div class="history_text">
-              <p class="section_text">
+              <p class="section_text section_text--dark">
                 Я&nbsp;сам пришёл в&nbsp;IT&nbsp;из&nbsp;бухгалтерии. Долгое время казалось, что мой
                 опыт&nbsp;— минус. Пока я&nbsp;не&nbsp;понял, что работодателю важны
                 не&nbsp;должности, а&nbsp;мышление, ответственность и&nbsp;умение решать задачи
                 бизнеса.
               </p>
-              <p class="section_text">
+              <p class="section_text section_text--dark">
                 Сегодня я&nbsp;помогаю упаковать любой опыт в&nbsp;понятные кейсы для резюме
                 и&nbsp;собеседований.
               </p>
-              <p class="section_text">
+              <p class="section_text section_text--dark">
                 Если получилось у&nbsp;меня&nbsp;— значит, можно выстроить путь и&nbsp;для&nbsp;вас.
               </p>
             </div>
@@ -220,34 +237,43 @@
         <div class="section_wrapper">
           <h2 id="mentor-title" class="section_title">Почему выбирают меня как ментора</h2>
           <div class="mentor_conteiner">
-            <div class="mentor_card">
-              <img class="mentor_img">
-              <h3 class="section_body-title">Практик, а не теоретик</h3>
-              <p class="section_text">
-                Работал PM&nbsp;в крупных продуктовых компаниях.Запускал продукты с&nbsp;миллионами
-                пользователей и&nbsp;решал задачи реального бизнеса, а&nbsp;не&nbsp;учебные кейсы
+            <div class="card">
+              <div class="card_image card_image--orange">
+                <div class="card_img card_img--folder"></div>
+              </div>
+              <h3 class="card_title">Практик, а не теоретик</h3>
+              <p class="card_text">Работал PM&nbsp;в крупных продуктовых компаниях.</p>
+              <p class="card_text">
+                Запускал продукты с&nbsp;миллионами пользователей и&nbsp;решал задачи реального
+                бизнеса, а&nbsp;не&nbsp;учебные кейсы
               </p>
             </div>
-            <div class="mentor_card">
-              <img class="mentor_img">
-              <h3 class="section_body-title">Чёткая и системная работа</h3>
-              <p class="section_text">
-                Строю понятный план развития под вашу цель:от&nbsp;диагностики текущего уровня
+            <div class="card">
+              <div class="card_image card_image--orange">
+                <div class="card_img card_img--file"></div>
+              </div>
+              <h3 class="card_title">Чёткая и системная работа</h3>
+              <p class="card_text">
+                Строю понятный план развития под вашу цель: от&nbsp;диагностики текущего уровня
                 до&nbsp;конкретных шагов к&nbsp;офферу
               </p>
             </div>
-            <div class="mentor_card">
-              <img class="mentor_img">
-              <h3 class="section_body-title">52+ специалиста с результатом</h3>
-              <p class="section_text">
+            <div class="card">
+              <div class="card_image card_image--orange">
+                <div class="card_img card_img--persons"></div>
+              </div>
+              <h3 class="card_title">52+ специалиста с результатом</h3>
+              <p class="card_text">
                 Помог специалистам из IT и не-IT сфер получить офферы, вырасти в роли или перейти в
                 менеджмент
               </p>
             </div>
-            <div class="mentor_card">
-              <img class="mentor_img">
-              <h3 class="section_body-title">Честная обратная связь и поддержка</h3>
-              <p class="section_text">
+            <div class="card">
+              <div class="card_image card_image--orange">
+                <div class="card_img card_img--heart-plus"></div>
+              </div>
+              <h3 class="card_title">Честная обратная связь и поддержка</h3>
+              <p class="card_text">
                 Отвечаю на&nbsp;вопросы в&nbsp;чате, провожу регулярные созвоны и&nbsp;даю прямую,
                 реалистичную обратную связь&nbsp;— без иллюзий и&nbsp;обещаний
               </p>
@@ -266,7 +292,9 @@
               </div>
               <div class="delusion_real">
                 <p class="delusion_title">Реальность</p>
-                <p class="delusion_desk">Для менеджмента важнее мышление и опыт принятия решений</p>
+                <p class="delusion_desk">
+                  Для менеджмента важнее мышление и опыт принятия&nbsp;решений
+                </p>
               </div>
             </div>
             <div class="delusion_row">
@@ -297,7 +325,7 @@
           <h2 id="work-title" class="section_title">Как я работаю</h2>
           <p class="section_subtitle">Простой и понятный процесс от начала до результата</p>
 
-          <ul class="work_list">
+          <ol class="work_list">
             <li class="work_item section_text">Строим пошаговый план до&nbsp;оффера</li>
             <li class="work_item section_text">
               Ищем результаты в&nbsp;прошлой профессии и&nbsp;упаковываем их&nbsp;в&nbsp;кейс
@@ -307,94 +335,94 @@
             </li>
             <li class="work_item section_text">Упаковываем реальный опыт без выдуманных кейсов</li>
             <li class="work_item section_text">Даю честную оценку ваших шансов</li>
-          </ul>
+          </ol>
         </div>
       </section>
-      <section id="career" class="section career" aria-labelledby="career-title">
+      <section id="tarif" class="section tarif" aria-labelledby="tarif-title">
         <div class="section_wrapper">
-          <h2 id="career-title" class="section_title">Разверни карьеру на 180°</h2>
-          <div class="career_conteiner">
-            <div class="career_card">
-              <h3 class="career_title">Начало</h3>
-              <p class="career_subtitle">Для осознанного старта</p>
-              <p class="career_desk">оценить возможности или получить персональный план</p>
-              <div class="career_field">
-                <span class="career_name">Формат</span>
-                <span class="career_value career_value--orange">30-минутная консультация</span>
+          <h2 id="tarif-title" class="section_title">Разверни карьеру на 180°</h2>
+          <div class="tarif_conteiner">
+            <div class="tarif_card">
+              <h3 class="tarif_title">Начало</h3>
+              <p class="tarif_subtitle">Для осознанного старта</p>
+              <p class="tarif_desk">оценить возможности или получить персональный план</p>
+              <div class="tarif_field">
+                <span class="tarif_name">Формат</span>
+                <span class="tarif_value tarif_value--orange">30-минутная консультация</span>
               </div>
-              <div class="career_field">
-                <span class="career_name">Длительность</span>
-                <span class="career_value career_value--orange">30 минут</span>
+              <div class="tarif_field tarif_field--margin">
+                <span class="tarif_name">Длительность</span>
+                <span class="tarif_value tarif_value--orange">30 минут</span>
               </div>
-              <ul class="career_list">
-                <li class="career_item">Анализ текущего опыта</li>
-                <li class="career_item">Оценка шансов перехода</li>
-                <li class="career_item">План первых шагов</li>
-                <li class="career_item">Понять нужно ли вам это</li>
+              <ul class="tarif_list">
+                <li class="tarif_item">Анализ текущего опыта</li>
+                <li class="tarif_item">Оценка шансов перехода</li>
+                <li class="tarif_item">План первых шагов</li>
+                <li class="tarif_item">Понять нужно ли вам это</li>
               </ul>
-              <div class="career_field">
-                <span class="career_name">Стоимость</span>
-                <span class="career_value career_value--cost">Бесплатно</span>
+              <div class="tarif_field tarif_field--margin">
+                <span class="tarif_name">Стоимость</span>
+                <span class="tarif_value tarif_value--cost">Бесплатно</span>
               </div>
-              <btn class="btn btn_second btn--tg">Написать в телеграм</btn>
+              <btn class="btn btn--tarif">Написать в телеграм</btn>
             </div>
-            <div class="career_card">
-              <h3 class="career_title">Переход</h3>
-              <p class="career_subtitle">Для смены роли или профессии</p>
-              <p class="career_desk">
+            <div class="tarif_card">
+              <h3 class="tarif_title">Переход</h3>
+              <p class="tarif_subtitle">Для смены роли или профессии</p>
+              <p class="tarif_desk">
                 перейти в&nbsp;IT-менеджмент с&nbsp;нуля или из&nbsp;другой IT-роли
               </p>
-              <div class="career_field">
-                <span class="career_name">Формат</span>
-                <span class="career_value career_value--orange">Индивидуальная программа</span>
+              <div class="tarif_field">
+                <span class="tarif_name">Формат</span>
+                <span class="tarif_value tarif_value--orange">Индивидуальная программа</span>
               </div>
-              <div class="career_field">
-                <span class="career_name">Длительность</span>
-                <span class="career_value career_value--orange">2 недели</span>
+              <div class="tarif_field tarif_field--margin">
+                <span class="tarif_name">Длительность</span>
+                <span class="tarif_value tarif_value--orange">2 недели</span>
               </div>
-              <ul class="career_list">
-                <li class="career_item">Стратегия перехода</li>
-                <li class="career_item">Упаковка резюме</li>
-                <li class="career_item">Поддержка в чате 2 недели</li>
-                <li class="career_item">Стратегия поиска работы</li>
+              <ul class="tarif_list">
+                <li class="tarif_item">Стратегия перехода</li>
+                <li class="tarif_item">Упаковка резюме</li>
+                <li class="tarif_item">Поддержка в чате 2 недели</li>
+                <li class="tarif_item">Стратегия поиска работы</li>
               </ul>
-              <div class="career_field">
-                <span class="career_name">Срок трудоустройства</span>
-                <span class="career_value career_value--light">3-6 месяцев</span>
+              <div class="tarif_field">
+                <span class="tarif_name">Срок трудоустройства</span>
+                <span class="tarif_value tarif_value--light">3-6 месяцев</span>
               </div>
-              <div class="career_field">
-                <span class="career_name">Стоимость</span>
-                <span class="career_value career_value--cost">4 000 ₽</span>
+              <div class="tarif_field tarif_field--margin">
+                <span class="tarif_name">Стоимость</span>
+                <span class="tarif_value tarif_value--cost">4 000 ₽</span>
               </div>
-              <btn class="btn btn_second btn--tg">Написать в телеграм</btn>
+              <btn class="btn btn--tarif">Написать в телеграм</btn>
             </div>
-            <div class="career_card">
-              <h3 class="career_title">Рост</h3>
-              <p class="career_subtitle">Для трудоустройства и роста</p>
-              <p class="career_desk">упаковать опыт, пройти собеседование, получить оффер</p>
-              <div class="career_field">
-                <span class="career_name">Формат</span>
-                <span class="career_value career_value--orange">Интенсив с поддержкой</span>
+            <div class="tarif_card">
+              <h3 class="tarif_title">Рост</h3>
+              <p class="tarif_subtitle">Для трудоустройства и роста</p>
+              <p class="tarif_desk">упаковать опыт, пройти собеседование, получить оффер</p>
+              <div class="tarif_field">
+                <span class="tarif_name">Формат</span>
+                <span class="tarif_value tarif_value--orange">Интенсив с поддержкой</span>
               </div>
-              <div class="career_field">
-                <span class="career_name">Длительность</span>
-                <span class="career_value career_value--orange">3 недели</span>
+              <div class="tarif_field tarif_field--margin">
+                <span class="tarif_name">Длительность</span>
+                <span class="tarif_value tarif_value--orange">3 недели</span>
               </div>
-              <ul class="career_list">
-                <li class="career_item">Стратегия перехода</li>
-                <li class="career_item">Готовое резюме</li>
-                <li class="career_item">Поддержка в чате 3 недели</li>
-                <li class="career_item">Стратегия переговоров</li>
+              <ul class="tarif_list">
+                <li class="tarif_item">Стратегия перехода</li>
+                <li class="tarif_item">Готовое резюме</li>
+                <li class="tarif_item">Поддержка в чате 3 недели</li>
+                <li class="tarif_item">Стратегия переговоров</li>
               </ul>
-              <div class="career_field">
-                <span class="career_name">Срок трудоустройства</span>
-                <span class="career_value career_value--light">3-6 месяцев</span>
+              <div class="tarif_field">
+                <span class="tarif_name">Срок трудоустройства</span>
+                <span class="tarif_value tarif_value--light">3-6 месяцев</span>
               </div>
-              <div class="career_field">
-                <span class="career_name">Стоимость</span>
-                <span class="career_value career_value--cost">12 000 ₽</span>
+              <div class="tarif_field tarif_field--margin">
+                <span class="tarif_name">Стоимость</span>
+                <span class="tarif_value tarif_value--cost">12 000 ₽</span>
               </div>
-              <btn class="btn btn_second btn--tg">Написать в телеграм</btn>
+              <btn class="btn btn--tarif">Написать в телеграм</btn>
             </div>
           </div>
         </div>
@@ -403,23 +431,23 @@
         <div class="section_wrapper">
           <h2 id="result-title" class="section_title">Результаты моих клиентов</h2>
           <div class="result_conteiner">
-            <div class="result_card">
+            <div class="result_card card">
               <div class="result_item">
                 <p class="result_title result_title--was">Было</p>
                 <p class="result_desk section_text">Бухгалтер в производственной компании</p>
               </div>
               <div class="result_item">
-                <p class="result_title result_title--was">Что сделали</p>
-                <p class="result_desk section_text">
+                <p class="result_title result_title--made">Что сделали</p>
+                <p class="result_desk result_desk--3 section_text">
                   Упаковали опыт работы с&nbsp;процессами и&nbsp;внутренней автомизацией
                 </p>
               </div>
               <div class="result_item">
-                <p class="result_title result_title--was">Результат</p>
+                <p class="result_title result_title--res">Результат</p>
                 <p class="result_desk section_text">Junior Business Analyst за 4 месяца</p>
               </div>
             </div>
-            <div class="result_card">
+            <div class="result_card card">
               <div class="result_item">
                 <p class="result_title result_title--was">Было</p>
                 <p class="result_desk section_text">
@@ -427,17 +455,17 @@
                 </p>
               </div>
               <div class="result_item">
-                <p class="result_title result_title--was">Что сделали</p>
-                <p class="result_desk section_text">
+                <p class="result_title result_title--made">Что сделали</p>
+                <p class="result_desk result_desk--3 section_text">
                   Перевели soft skills в менеджерские компетенции
                 </p>
               </div>
               <div class="result_item">
-                <p class="result_title result_title--was">Результат</p>
+                <p class="result_title result_title--res">Результат</p>
                 <p class="result_desk section_text">Scrum Master в стартапе</p>
               </div>
             </div>
-            <div class="result_card">
+            <div class="result_card card">
               <div class="result_item">
                 <p class="result_title result_title--was">Было</p>
                 <p class="result_desk section_text">
@@ -445,11 +473,13 @@
                 </p>
               </div>
               <div class="result_item">
-                <p class="result_title result_title--was">Что сделали</p>
-                <p class="result_desk section_text">Выстроили стратегию горизонтального роста</p>
+                <p class="result_title result_title--made">Что сделали</p>
+                <p class="result_desk result_desk--3 section_text">
+                  Выстроили стратегию горизонтального роста
+                </p>
               </div>
               <div class="result_item">
-                <p class="result_title result_title--was">Результат</p>
+                <p class="result_title result_title--res">Результат</p>
                 <p class="result_desk section_text">Tech Lead с командой 8 человек</p>
               </div>
             </div>
@@ -474,56 +504,99 @@
         <div class="section_wrapper">
           <h2 id="approach-title" class="section_title">Мой подход к менторству</h2>
           <div class="approach_conteiner">
-            <div class="approach_card">
-              <img class="approach_img">
-              <h3 class="section_body-title">Сначала — честный разбор вашего опыта</h3>
-              <p class="section_text">На&nbsp;старте разбираем ваш опыт, цели и&nbsp;ограничения</p>
+            <div class="card">
+              <div class="card_image">
+                <div class="card_img card_img--bild"></div>
+              </div>
+              <h3 class="card_title">Сначала — честный разбор вашего опыта</h3>
+              <p class="card_text">На&nbsp;старте разбираем ваш опыт, цели и&nbsp;ограничения</p>
             </div>
-            <div class="approach_card">
-              <img class="approach_img">
-              <h3 class="section_body-title">Персональный план действий</h3>
-              <p class="section_text">
+            <div class="card">
+              <div class="card_image">
+                <div class="card_img card_img--star"></div>
+              </div>
+              <h3 class="card_title">Персональный план действий</h3>
+              <p class="card_text">
                 Формирую персональный план действий под ваш бэкграунд и&nbsp;выбранную цель
               </p>
             </div>
-            <div class="approach_card">
-              <img class="approach_img">
-              <h3 class="section_body-title">Поддержка в процессе</h3>
-              <p class="section_text">
+            <div class="card">
+              <div class="card_image">
+                <div class="card_img card_img--heart"></div>
+              </div>
+              <h3 class="card_title">Поддержка в процессе</h3>
+              <p class="card_text">
                 Остаюсь на связи между встречами и помогаю двигаться по плану без провалов
               </p>
             </div>
           </div>
-          <p class="section_text">
+          <p class="section_subtitle section_subtitle--last">
             Без обещаний «гарантированного оффера» и с фокусом на реальный результат
           </p>
         </div>
       </section>
       <div class="marquee">
-        <p class="marquee_desk">
-          <span class="marquee_count">1100 </span>подписчиков на платформе «Сетка»
-        </p>
-        <p class="marquee_desk">
-          <span class="marquee_count">100 </span>постов
-        </p>
-        <p class="marquee_desk">
-          <span class="marquee_count">10+</span>лонгридов
-        </p>
+        <div class="section_wrapper">
+          <div class="marquee_container">
+            <div class="marquee_content">
+              <div class="marquee_group">
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">1100 </span>подписчиков на платформе «Сетка»
+                </p>
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">100 </span>постов
+                </p>
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">10+ </span>лонгридов
+                </p>
+                <p class="marquee_item section_text" aria-hidden="true">
+                  <span class="marquee_count">1100 </span>подписчиков на платформе «Сетка»
+                </p>
+                <p class="marquee_item section_text" aria-hidden="true">
+                  <span class="marquee_count">100 </span>постов
+                </p>
+                <p class="marquee_item section_text" aria-hidden="true">
+                  <span class="marquee_count">10+ </span>лонгридов
+                </p>
+              </div>
+              <div class="marquee_group" aria-hidden="true" hidden>
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">1100 </span>подписчиков на платформе «Сетка»
+                </p>
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">100 </span>постов
+                </p>
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">10+ </span>лонгридов
+                </p>
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">1100 </span>подписчиков на платформе «Сетка»
+                </p>
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">100 </span>постов
+                </p>
+                <p class="marquee_item section_text">
+                  <span class="marquee_count">10+ </span>лонгридов
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <section id="tasks" class="section tasks" aria-labelledby="tasks-title">
+      <section id="tasks" class="section task" aria-labelledby="tasks-title">
         <div class="section_wrapper">
           <h2 id="tasks-title" class="section_title">Как я разбираю задачи PM</h2>
           <p class="section_subtitle">Здесь нет скучных инструкций — только живые кейсы</p>
-          <div class="tasks_conteiner">
-            <div class="task_card">
-              <img class="task_img">
+          <div class="task_conteiner">
+            <div class="task_card card">
+              <img class="task_img" src="/assets/images/newspaper.svg" width="180px" height="180px">
               <h3 class="task_title">Telegram-канал:</h3>
               <p class="task_desk">
                 короткие заметки с&nbsp;практическим опытом и&nbsp;готовыми рекомендациями
               </p>
             </div>
-            <div class="task_card">
-              <img class="task_img">
+            <div class="task_card card">
+              <img class="task_img" src="/assets/images/notebook.svg" width="180px" height="180px">
               <h3 class="task_title">Лонгриды:</h3>
               <p class="task_desk">
                 глубокие разборы инструментов и&nbsp;фреймовоков для управления проектами
@@ -542,17 +615,27 @@
           </p>
           <p class="section_subtitle">Для карьеры, для бизнеса, для социальных проектов</p>
           <div class="case_conteiner">
-            <div class="case_card">
+            <div class="case_card task_card">
               <h3 class="case_title">
-                <img class="case_img">
+                <img
+                  class="task_img"
+                  src="/assets/images/notebook.svg"
+                  width="180px"
+                  height="180px"
+                >
               </h3>
-              <p class="case_desk">От сервиса автооткликов — к бирже менторов</p>
+              <p class="task_desk case_desk">От сервиса автооткликов — к бирже менторов</p>
             </div>
-            <div class="case_card">
+            <div class="case_card task_card">
               <h3 class="case_title">
-                <img class="case_img">
+                <img
+                  class="task_img"
+                  src="/assets/images/notebook.svg"
+                  width="180px"
+                  height="180px"
+                >
               </h3>
-              <p class="case_desk">Телеграм-бот со&nbsp;скороговорками</p>
+              <p class="task_desk">Телеграм-бот со&nbsp;скороговорками</p>
             </div>
           </div>
         </div>
@@ -560,61 +643,100 @@
       <section id="reviews" class="section reviews" aria-labelledby="reviews-title">
         <div class="section_wrapper">
           <h2 id="reviews-title" class="section_title">Реальные отзывы от реальных людей</h2>
-          <p class="section_subtitle"></p>
           <div class="reviews_conteiner">
-            <div class="reviews_card">
-              <p class="section_text">
-                Программа помогла мне систематизировать знания и&nbsp;получить практический опыт.
-                Через 2 месяца после выпуска получила оффер в&nbsp;компанию.
-              </p>
-              <h3 class="reviews_title">Алексей Соколов</h3>
-              <p class="reviews_subtitle">Product Manager</p>
-            </div>
-            <div class="reviews_card">
-              <p class="section_text">
-                Перешла из&nbsp;дизайна в&nbsp;PM. Ментор помог составить портфолио
-                и&nbsp;подготовиться к&nbsp;собеседованиям. Сейчас работаю в&nbsp;быстрорастущем
-                стартапе
-              </p>
-              <h3 class="reviews_title">Мария Волкова</h3>
-              <p class="reviews_subtitle">Product Manager</p>
-            </div>
-            <div class="reviews_card">
-              <p class="section_text">
-                Программа помогла мне систематизировать знания и&nbsp;получить практический опыт.
-                Через 2 месяца после выпуска получила оффер в&nbsp;компанию.
-              </p>
-              <h3 class="reviews_title">Алексей Соколов</h3>
-              <p class="reviews_subtitle">Product Manager</p>
-            </div>
-            <div class="reviews_card">
-              <p class="section_text">
-                Перешла из&nbsp;дизайна в&nbsp;PM. Ментор помог составить портфолио
-                и&nbsp;подготовиться к&nbsp;собеседованиям. Сейчас работаю в&nbsp;быстрорастущем
-                стартапе
-              </p>
-              <h3 class="reviews_title">Мария Волкова</h3>
-              <p class="reviews_subtitle">Product Manager</p>
+            <div class="marquee">
+              <div class="marquee_container">
+                <div class="marquee_content">
+                  <div class="marquee_group">
+                    <div class="reviews_card card">
+                      <p class="reviews_text">
+                        Программа помогла мне систематизировать знания и&nbsp;получить практический
+                        опыт. Через 2 месяца после выпуска получила оффер в&nbsp;компанию.
+                      </p>
+                      <h3 class="reviews_title">Алексей Соколов</h3>
+                      <p class="reviews_subtitle">Product Manager</p>
+                    </div>
+                    <div class="reviews_card card">
+                      <p class="reviews_text">
+                        Перешла из&nbsp;дизайна в&nbsp;PM. Ментор помог составить портфолио
+                        и&nbsp;подготовиться к&nbsp;собеседованиям. Сейчас работаю
+                        в&nbsp;быстрорастущем стартапе
+                      </p>
+                      <h3 class="reviews_title">Мария Волкова</h3>
+                      <p class="reviews_subtitle">Product Manager</p>
+                    </div>
+                    <div class="reviews_card card">
+                      <p class="reviews_text">
+                        Программа помогла мне систематизировать знания и&nbsp;получить практический
+                        опыт. Через 2 месяца после выпуска получила оффер в&nbsp;компанию.
+                      </p>
+                      <h3 class="reviews_title">Алексей Соколов</h3>
+                      <p class="reviews_subtitle">Product Manager</p>
+                    </div>
+                    <div class="reviews_card card">
+                      <p class="reviews_text">
+                        Перешла из&nbsp;дизайна в&nbsp;PM. Ментор помог составить портфолио
+                        и&nbsp;подготовиться к&nbsp;собеседованиям. Сейчас работаю
+                        в&nbsp;быстрорастущем стартапе
+                      </p>
+                      <h3 class="reviews_title">Мария Волкова</h3>
+                      <p class="reviews_subtitle">Product Manager</p>
+                    </div>
+                  </div>
+                  <div class="marquee_group" aria-hidden="true" hidden>
+                    <div class="reviews_card card">
+                      <p class="reviews_text">
+                        Программа помогла мне систематизировать знания и&nbsp;получить практический
+                        опыт. Через 2 месяца после выпуска получила оффер в&nbsp;компанию.
+                      </p>
+                      <h3 class="reviews_title">Алексей Соколов</h3>
+                      <p class="reviews_subtitle">Product Manager</p>
+                    </div>
+                    <div class="reviews_card card">
+                      <p class="reviews_text">
+                        Перешла из&nbsp;дизайна в&nbsp;PM. Ментор помог составить портфолио
+                        и&nbsp;подготовиться к&nbsp;собеседованиям. Сейчас работаю
+                        в&nbsp;быстрорастущем стартапе
+                      </p>
+                      <h3 class="reviews_title">Мария Волкова</h3>
+                      <p class="reviews_subtitle">Product Manager</p>
+                    </div>
+                    <div class="reviews_card card">
+                      <p class="reviews_text">
+                        Программа помогла мне систематизировать знания и&nbsp;получить практический
+                        опыт. Через 2 месяца после выпуска получила оффер в&nbsp;компанию.
+                      </p>
+                      <h3 class="reviews_title">Алексей Соколов</h3>
+                      <p class="reviews_subtitle">Product Manager</p>
+                    </div>
+                    <div class="reviews_card card">
+                      <p class="reviews_text">
+                        Перешла из&nbsp;дизайна в&nbsp;PM. Ментор помог составить портфолио
+                        и&nbsp;подготовиться к&nbsp;собеседованиям. Сейчас работаю
+                        в&nbsp;быстрорастущем стартапе
+                      </p>
+                      <h3 class="reviews_title">Мария Волкова</h3>
+                      <p class="reviews_subtitle">Product Manager</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
       <section id="doubt" class="section doubt">
-        <div class="section_wrapper">
-          <h2 id="doubt-title" class="section_title">Всё еще сомневаешься?</h2>
-          <div class="doubt_conteiner">
-            <div class="glass_conteiner">
-              <div class="glass_subconteiner">
-                <h3 class="doubt_title">Готовы понять как именно вам войти или вырасти в IT?</h3>
-                <p class="doubt_subtitle">Начините с бесплатной 30-минутной консультации</p>
-                <p class="doubt_desk">
-                  30 минут честного разговора могут изменить ваше понимание собственных возможностей
-                </p>
-                <div class="btn_conteiner">
-                  <btn class="btn btn_first">Бесплатная консультация</btn>
-                  <btn class="btn btn_second btn--tg">Написать в телеграм</btn>
-                </div>
-              </div>
+        <h2 id="doubt-title" class="section_title">Всё еще сомневаешься?</h2>
+        <div class="doubt_conteiner">
+          <div class="doubt_subconteiner">
+            <h3 class="doubt_title">Готовы понять как именно вам войти или вырасти в IT?</h3>
+            <p class="doubt_subtitle">Начините с бесплатной 30-минутной консультации</p>
+            <p class="doubt_desk">
+              30 минут честного разговора могут изменить ваше понимание собственных возможностей
+            </p>
+            <div class="btn_conteiner">
+              <btn class="btn btn--primary">Бесплатная консультация</btn>
+              <btn class="btn btn--secondary btn--tg">Написать в телеграм</btn>
             </div>
           </div>
         </div>
@@ -626,59 +748,81 @@
           <dl class="questions_list">
             <dt class="questions_item">
               <details class="questions_details">
-                <summary class="questions_question">Это точно бесплатно?</summary>
-                <p class="questions_answer">
-                  Да, асолютно. Это 30 минут конкретики про вашу ситуацию&nbsp;— без скрытых продаж
-                  и&nbsp;обязательств. Если после разбора захотите работать глубже&nbsp;— обсудим
-                  отдельно. Если нет&nbsp;— просто уйдёте с&nbsp;пониманием, что именно исправить.
-                </p>
+                <summary class="questions_summary">Это точно бесплатно?</summary>
+                <div class="questions_content_wrapper">
+                  <div class="questions_content">
+                    <p class="questions_answer">
+                      Да, асолютно. Это 30 минут конкретики про вашу ситуацию&nbsp;— без скрытых
+                      продаж и&nbsp;обязательств. Если после разбора захотите работать глубже&nbsp;—
+                      обсудим отдельно. Если нет&nbsp;— просто уйдёте с&nbsp;пониманием, что именно
+                      исправить.
+                    </p>
+                  </div>
+                </div>
               </details>
             </dt>
             <dt class="questions_item">
               <details class="questions_details">
-                <summary class="questions_question">
+                <summary class="questions_summary">
                   У меня нет крутых проектов в резюме. Стоит ли вообще обращаться?
                 </summary>
-                <p class="questions_answer">
-                  Именно с такими кейсами работаем чаще всего. Почти у всех «крутые проекты»
-                  оказываются ежедневной рутиной — просто правильно упакованной. Научимся делать так
-                  же с вашим опытом.
-                </p>
+                <div class="questions_content_wrapper">
+                  <div class="questions_content">
+                    <p class="questions_answer">
+                      Именно с такими кейсами работаем чаще всего. Почти у всех «крутые проекты»
+                      оказываются ежедневной рутиной — просто правильно упакованной. Научимся делать
+                      так же с вашим опытом.
+                    </p>
+                  </div>
+                </div>
               </details>
             </dt>
             <dt class="questions_item">
               <details class="questions_details">
-                <summary class="questions_question">
+                <summary class="questions_summary">
                   Вы работаете только с будущими продактами и проджектами?
                 </summary>
-                <p class="questions_answer">
-                  В&nbsp;основном да, это моя основная экспертиза. Но&nbsp;ещё&nbsp;—
-                  с&nbsp;аналитиками, разработчиками и&nbsp;тестировщиками, которые хотят перейти
-                  в&nbsp;менеджмент. Если вы&nbsp;хотите сменить роль внутри IT&nbsp;— welcome.
-                </p>
+                <div class="questions_content_wrapper">
+                  <div class="questions_content">
+                    <p class="questions_answer">
+                      В&nbsp;основном да, это моя основная экспертиза. Но&nbsp;ещё&nbsp;—
+                      с&nbsp;аналитиками, разработчиками и&nbsp;тестировщиками, которые хотят
+                      перейти в&nbsp;менеджмент. Если вы&nbsp;хотите сменить роль внутри IT&nbsp;—
+                      welcome.
+                    </p>
+                  </div>
+                </div>
               </details>
             </dt>
             <dt class="questions_item">
               <details class="questions_details">
-                <summary class="questions_question">
+                <summary class="questions_summary">
                   Я уже хожу на собеседования, но офферов нет. Вы сможете помочь?
                 </summary>
-                <p class="questions_answer">
-                  Это идеальный кейс для работы. Значит, проблема не в попадании в «воронку», а в её
-                  прохождении. Как раз мой профиль — разбор собеседований, переговоров и «последнего
-                  шага» перед оффером.
-                </p>
+                <div class="questions_content_wrapper">
+                  <div class="questions_content">
+                    <p class="questions_answer">
+                      Это идеальный кейс для работы. Значит, проблема не в попадании в «воронку», а
+                      в её прохождении. Как раз мой профиль — разбор собеседований, переговоров и
+                      «последнего шага» перед оффером.
+                    </p>
+                  </div>
+                </div>
               </details>
             </dt>
             <dt class="questions_item">
               <details class="questions_details">
-                <summary class="questions_question">
+                <summary class="questions_summary">
                   А если после аудита я пойму, что мне это не нужно?
                 </summary>
-                <p class="questions_answer">
-                  Отлично! Значит, 30 минут помогли сэкономить месяцы неясности. Я за то, чтобы люди
-                  тратили время только на то, что действительно приведёт их к цели.
-                </p>
+                <div class="questions_content_wrapper">
+                  <div class="questions_content">
+                    <p class="questions_answer">
+                      Отлично! Значит, 30 минут помогли сэкономить месяцы неясности. Я за то, чтобы
+                      люди тратили время только на то, что действительно приведёт их к цели.
+                    </p>
+                  </div>
+                </div>
               </details>
             </dt>
           </dl>
