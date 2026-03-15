@@ -4,7 +4,7 @@
   padding: 32px;
   background-color: var(--white);
   border-radius: 12px;
-  box-shadow: var(--card-shadow);
+  box-shadow: var(--card-inset);
 
   @media (width < $to-tablet-width) {
     padding: 24px;
@@ -39,6 +39,7 @@
       left: -14px;
       z-index: 0;
       background-image: var(--liner-blue-2);
+      transition: all 300ms ease-in;
     }
 
     &--orange::before {
@@ -53,7 +54,7 @@
       backdrop-filter: blur(10px);
     }
 
-    &:hover::before {
+    .card.is-visible &::before {
       transform-origin: center;
       transform: rotate(-20deg);
     }

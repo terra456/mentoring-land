@@ -6,7 +6,6 @@ function openMenu() {
   TOGGLER.classList.add("open");
   MENU.classList.remove("close");
   TOGGLER.classList.remove("close");
-  document.body.classList.add("no-scroll");
   document.body.addEventListener("click", closeMenu);
   document.body.addEventListener("touchmove", closeMenu);
 }
@@ -16,7 +15,6 @@ function closeMenu() {
   TOGGLER.classList.remove("open");
   MENU.classList.add("close");
   TOGGLER.classList.add("close");
-  document.body.classList.remove("no-scroll");
   document.body.removeEventListener("click", closeMenu);
   document.body.removeEventListener("touchmove", closeMenu);
 }

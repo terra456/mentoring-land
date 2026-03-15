@@ -30,7 +30,7 @@
     overflow: visible;
 
     @media (width < $minidesc-width) {
-      margin: 0 auto 100px;
+      margin: 14px auto 90px;
       width: 834px;
       height: 580px;
       background-image: url("/assets/images/doubt-tb.png");
@@ -74,10 +74,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid black;
+
+    // border: 1px solid black;
 
     @media (width < $minidesc-width) {
-      margin-top: 123px;
+      margin-top: 148px;
       margin-left: 60px;
       margin-bottom: 32px;
       width: 682px;

@@ -1,15 +1,8 @@
 @use "../base/variables" as *;
 
 .reviews {
-  & .section_wrapper {
-    @media (width < $to-tablet-width) {
-      padding-bottom: 68px;
-    }
-  }
-
   &_conteiner {
     width: 100%;
-    margin-top: -32px;
   }
 
   &_card {
@@ -22,10 +15,6 @@
     @media (width < 748px) {
       width: 343px;
     }
-  }
-
-  & .marquee_container {
-    padding: 32px;
   }
 
   & .marquee_content {

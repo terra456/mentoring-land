@@ -1,19 +1,27 @@
 @use "../base/variables" as *;
 
-.advice_text {
-  max-width: 750px;
-  padding-bottom: 40px;
-  font-family: var(--body-font);
-  font-size: 32px;
-  font-weight: 400;
-  color: var(--text-dark);
-  text-align: center;
-
-  @media (width < $to-tablet-width) {
-    font-size: 24px;
+.advice {
+  & .section_title {
+    @media (width < $to-mobile-width) {
+      padding-bottom: 24px;
+    }
   }
 
-  @media (width < $to-mobile-width) {
-    font-size: 20px;
+  &_text {
+    max-width: 750px;
+    padding-bottom: 40px;
+    font-family: var(--body-font);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--text-medium);
+    text-align: center;
+
+    @media (width < $to-tablet-width) {
+      font-size: 24px;
+    }
+
+    @media (width < $to-mobile-width) {
+      font-size: 20px;
+    }
   }
 }

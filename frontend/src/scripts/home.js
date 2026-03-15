@@ -1,3 +1,3 @@
-import "./form.js";
+import "./show.js";
 import "./slider.js";
-import "./chart-component.js";
+import "./counter.js";

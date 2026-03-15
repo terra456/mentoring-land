@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 
 // Инициализируем все слайдеры на странице
@@ -9,35 +9,92 @@ document.querySelectorAll(".swiper").forEach((swiperEl) => {
 
   // Базовая конфигурация
   const baseConfig = {
-    modules: [Navigation, Pagination],
-    direction: "horizontal",
-    slidesPerView: 1,
+    modules: [Navigation],
+    slidesPerView: "auto",
     height: "auto",
-    pagination: {
-      el: section?.querySelector(".swiper-pagination"),
-      clickable: true,
+    observer: true,
+    observeParents: true,
+    observeSlideChildren: true,
+    resizeObserver: true,
+    watchOverflow: true,
+
+    // Скрываем навигацию, когда нет возможности слайдить
+    on: {
+      init(swiper) {
+        const nav = section?.querySelector(".swiper-navigation");
+        if (!nav) return;
+        nav.style.display = swiper.isLocked ? "none" : "";
+      },
+      resize(swiper) {
+        const nav = section?.querySelector(".swiper-navigation");
+        if (!nav) return;
+        nav.style.display = swiper.isLocked ? "none" : "";
+      },
     },
+
     navigation: {
-      nextEl: section?.querySelector(".swiper-button-next"),
-      prevEl: section?.querySelector(".swiper-button-prev"),
+      nextEl: section?.querySelector(".swiper-btn-next"),
+      prevEl: section?.querySelector(".swiper-btn-prev"),
     },
   };
 
   // Специфичные настройки для разных секций
-  if (sectionId === "reviews") {
+  if (sectionId === "delusion") {
+    Object.assign(baseConfig, {
+      spaceBetween: 0,
+      slidesPerView: 1,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 16,
+          direction: "horizontal",
+        },
+        // когда ширина экрана >= 580px (планшеты)
+        500: {
+          slidesPerView: 3,
+          spaceBetween: 1,
+          direction: "vertical",
+        },
+      },
+    });
+  } else if (sectionId === "result") {
+    Object.assign(baseConfig, {
+      spaceBetween: 60,
+      slidesPerView: 1,
+      direction: "horizontal",
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        // когда ширина экрана >= 580px (планшеты)
+        500: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        // когда ширина экрана >= 1160px (десктоп)
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 0,
+        },
+      },
+    });
+  } else if (sectionId === "tasks") {
     Object.assign(baseConfig, {
       spaceBetween: 20,
+      slidesPerView: 1,
+      direction: "horizontal",
       breakpoints: {
-        1030: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        // когда ширина экрана >= 500px (планшеты)
+        500: {
           slidesPerView: 2,
           spaceBetween: 20,
         },
       },
-    });
-  } else if (sectionId === "solution") {
-    Object.assign(baseConfig, {
-      spaceBetween: 50,
-      speed: 1000,
     });
   }
 

@@ -2,29 +2,34 @@
 
 .result {
   &_conteiner {
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
+    width: 100%;
   }
 
   &_card {
-    width: calc(100% - 24px * 2);
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: column;
     place-content: stretch flex-start;
     align-items: stretch;
   }
 
   &_item {
     width: 100%;
+    min-height: 124px;
+    padding-bottom: 24px;
 
     &:not(:last-child) {
-      padding-bottom: 24px;
       border-bottom: 1px solid var(--light-grey);
     }
 
     &:not(:first-child) {
       padding-top: 32px;
+    }
+
+    @media (width < $to-tablet-width) {
+      min-height: auto;
+      padding-bottom: 16px;
     }
   }
 
@@ -42,6 +47,10 @@
     &--res {
       color: var(--accent-orange);
     }
+
+    @media (width < $to-tablet-width) {
+      padding-bottom: 8px;
+    }
   }
 
   &_desk--3 {
@@ -49,7 +58,7 @@
   }
 
   &_numbers {
-    padding-bottom: 140px;
+    padding-top: 46px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -57,7 +66,7 @@
     justify-content: center;
 
     @media (width < $to-tablet-width) {
-      padding-bottom: 100px;
+      gap: 0;
     }
 
     @media (width < $to-mobile-width) {
@@ -76,6 +85,10 @@
         order: 3;
       }
     }
+
+    @media (width < $to-mobile-width) {
+      flex: 1;
+    }
   }
 
   &_number-count {
@@ -93,6 +106,8 @@
   }
 
   &_number-desk {
+    white-space: nowrap;
+
     @media (width < $to-tablet-width) {
       font-size: 16px;
     }

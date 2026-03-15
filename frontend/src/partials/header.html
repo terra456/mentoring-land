@@ -20,8 +20,17 @@
         <a class="header_link link-nav" href="/#reviews">Отзывы</a>
       </li>
       <li class="header_item">
-        <a class="header_link link-nav open" href="/#projects">Проекты</a>
-        <ul class="header_sublist">
+        <button
+          id="projects-btn"
+          class="header_link link-nav header_btn"
+          aria-label="Открыть меню с проектами"
+          aria-controls="projects-menu"
+          aria-expanded="false"
+          title="Меню проекты"
+        >
+          Проекты
+        </button>
+        <ul id="projects-menu" class="header_sublist">
           <li class="header_item header_subitem">
             <a
               class="header_link header_link--icon link-nav modal-trigger"
@@ -52,16 +61,16 @@
         <a class="header_link link-nav" href="/#questions">Вопросы</a>
       </li>
     </ul>
+    <button
+      type="button"
+      id="toggle"
+      class="toggle_btn"
+      aria-label="Открыть меню"
+      aria-controls="menu"
+      aria-expanded="false"
+      title="Меню"
+    >
+      <span class="line"></span>
+    </button>
   </nav>
-  <button
-    type="button"
-    id="toggle"
-    class="toggle_btn"
-    aria-label="Открыть меню"
-    aria-controls="menu"
-    aria-expanded="false"
-    title="Меню"
-  >
-    <span class="line"></span>
-  </button>
 </header>

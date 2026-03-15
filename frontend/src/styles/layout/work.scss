@@ -9,6 +9,10 @@
     align-items: stretch;
     gap: 24px;
 
+    @media (width < $to-tablet-width) {
+      gap: 20px;
+    }
+
     @media (width < $to-mobile-width) {
       gap: 16px;
     }
@@ -22,16 +26,17 @@
     padding: 24px;
     padding-top: 72px;
     background-color: #fff;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--card-inset);
     border-radius: 12px;
 
     @media (width < $to-tablet-width) {
-      width: calc((100% - 24px) / 2);
+      width: calc((100% - 20px) / 2);
       height: auto;
     }
 
     @media (width < $to-mobile-width) {
       width: 100%;
+      font-size: 16px;
     }
 
     &:nth-child(1) {

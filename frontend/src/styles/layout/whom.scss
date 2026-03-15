@@ -4,7 +4,7 @@
   &_conteiner {
     width: 100%;
     background-color: #fff;
-    box-shadow: var(--card-shadow);
+    box-shadow: var(--card-inset);
     display: flex;
     flex-flow: row nowrap;
     padding: 32px 0;
@@ -23,7 +23,7 @@
 
   &_column {
     width: calc(100% / 2);
-    padding: 32px;
+    padding: 0 32px;
 
     &:first-child {
       border-right: 2px solid var(--light-grey);

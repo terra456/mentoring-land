@@ -35,8 +35,12 @@
   &_text {
     width: 60%;
 
-    & > * {
+    & > p {
       padding-bottom: 16px;
+
+      @media (width < $to-mobile-width) {
+        font-size: 16px;
+      }
     }
 
     @media (width < $desctop-width) {

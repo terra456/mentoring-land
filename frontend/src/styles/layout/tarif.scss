@@ -12,6 +12,10 @@
       justify-content: center;
       gap: 20px;
     }
+
+    @media (width <= 651px) {
+      flex-direction: column;
+    }
   }
 
   &_card {
@@ -33,7 +37,7 @@
       font-size: 16px;
     }
 
-    @media (width < $mobile-width) {
+    @media (width <= 651px) {
       width: 100%;
     }
 
