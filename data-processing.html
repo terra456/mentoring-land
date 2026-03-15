@@ -13,9 +13,87 @@
       name="description"
       content="Согласие на обработку персональных данных сервисом Велес-тех-1C"
     >
+    <script type="module" crossorigin src="./assets/main2.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main2.css">
   </head>
   <body>
-    <load src="partials/header.html"/>
+    <header class="header" role="banner">
+  <a href="/">
+    <img
+      class="header_logo"
+      src="./assets/logo.svg"
+      alt="Логотип Рим Айбулатов"
+      width="241px"
+      height="25px"
+    >
+  </a>
+  <nav class="header_nav" aria-label="Основная навигация сайта">
+    <ul id="menu" class="header_list">
+      <li class="header_item">
+        <a class="header_link link-nav" href="/#tarif">Тарифы</a>
+      </li>
+      <li class="header_item">
+        <a class="header_link link-nav" href="/#case">Кейсы</a>
+      </li>
+      <li class="header_item">
+        <a class="header_link link-nav" href="/#reviews">Отзывы</a>
+      </li>
+      <li class="header_item">
+        <button
+          id="projects-btn"
+          class="header_link link-nav header_btn"
+          aria-label="Открыть меню с проектами"
+          aria-controls="projects-menu"
+          aria-expanded="false"
+          title="Меню проекты"
+        >
+          Проекты
+        </button>
+        <ul id="projects-menu" class="header_sublist">
+          <li class="header_item header_subitem">
+            <a
+              class="header_link header_link--icon link-nav modal-trigger"
+              href="books"
+              data-content="contacts"
+              >Книги</a
+            >
+          </li>
+          <li class="header_item header_subitem">
+            <a
+              class="header_link header_link--icon link-nav modal-trigger"
+              href="scoro"
+              data-content="contacts"
+              >Скороговорович</a
+            >
+          </li>
+          <li class="header_item header_subitem">
+            <a
+              class="header_link header_link--icon link-nav modal-trigger"
+              href="nasbot"
+              data-content="nasobes"
+              >На Собес.РФ</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="header_item">
+        <a class="header_link link-nav" href="/#questions">Вопросы</a>
+      </li>
+    </ul>
+    <button
+      type="button"
+      id="toggle"
+      class="toggle_btn"
+      aria-label="Открыть меню"
+      aria-controls="menu"
+      aria-expanded="false"
+      title="Меню"
+    >
+      <span class="line"></span>
+    </button>
+  </nav>
+</header>
+
     <main role="main" class="consent">
       <div class="section_wrapper">
         <h2>Согласие на обработку персональных данных</h2>
@@ -112,8 +190,118 @@
         </p>
       </div>
     </main>
-    <load src="partials/cookie-banner.html"/>
-    <load src="partials/footer.html"/>
-    <script type="module" src="/main.js" defer></script>
+    <div id="cookie" class="cookie_banner">
+  <p class="cookie_desc">
+    Мы используем файлы
+    <a class="link-text" href="/cookie-policy.html">cookie</a>&nbsp;🍪, чтобы сайт работал стабильно
+  </p>
+  <button
+    id="cookieBtn"
+    type="button"
+    class="cookie_btn btn btn--primary"
+    aria-label="Согласится с использованием cookie"
+    title="Согласится с использованием cookie"
+  >
+    Хорошо
+  </button>
+</div>
+
+    <footer class="footer section" role="contentinfo">
+  <div class="section_wrapper footer_wrapper">
+    <div class="footer_logo-conteiner">
+      <a href="/">
+        <img
+          class="footer_logo"
+          src="./assets/logo.svg"
+          alt="Логотип Рим Айбулатов"
+          width="241px"
+          height="25px"
+        >
+      </a>
+      <p class="footer_desc">
+        Помогаю специалистам войти и вырасти в IT-менеджменте через упаковку реального опыта
+      </p>
+    </div>
+    <nav class="footer_nav footer_navigation" aria-label="Дополнительная навигация по разделам">
+      <h3 class="footer_title">Навигация</h3>
+      <ul class="footer_list">
+        <li class="footer_item">
+          <a class="footer_link link-nav" href="/#">Главная</a>
+        </li>
+        <li class="footer_item">
+          <a class="footer_link link-nav" href="/#">Тарифы</a>
+        </li>
+        <li class="footer_item">
+          <a class="footer_link link-nav" href="/#">Кейсы</a>
+        </li>
+        <li class="footer_item">
+          <a class="footer_link link-nav" href="/#">О подходе</a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="footer_nav footer_more" aria-label="Ссылки для подробной информации">
+      <h3 class="footer_title">Узнать больше</h3>
+      <ul class="footer_list">
+        <li class="footer_item">
+          <a class="footer_link link-nav" href="/#reviews">Отзывы</a>
+        </li>
+        <li class="footer_item">
+          <a class="footer_link link-nav" href="/#">Посты</a>
+        </li>
+        <li class="footer_item">
+          <a class="footer_link link-nav" href="/#">Лонгриды</a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="footer_nav footer_projects" aria-label="Ссылки на дргугие проекты">
+      <h3 class="footer_title">Другие проекты</h3>
+      <ul class="footer_list">
+        <li class="footer_item">
+          <a class="footer_link link-nav" href="/#">Книги</a>
+        </li>
+        <li class="footer_item">
+          <a class="footer_link link-nav" href="/#">Скороговорович</a>
+        </li>
+        <li class="footer_item">
+          <a class="footer_link link-nav" href="/#">На Собес.РФ</a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="footer_nav footer_pravo" aria-label="Правовая информация">
+      <h3 class="footer_title">Правовая информация</h3>
+      <ul class="footer_list">
+        <li class="footer_item">
+          <a class="footer_link link-nav" href="/privacy-policy.html"
+            >Политика конфиденциальности</a
+          >
+        </li>
+        <li class="footer_item">
+          <a class="footer_link link-nav" href="/data-processing.html"
+            >Согласие на обработку персональных данных</a
+          >
+        </li>
+        <li class="footer_item">
+          <a class="footer_link link-nav" href="/cookie-policy.html"
+            >Политика использования cookies</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="footer_social" aria-label="Ссылки на соц.сети">
+      <ul class="social_list">
+        <li class="social_item">
+          <a class="social_link" href="https://t.me"></a>
+        </li>
+        <li class="social_item">
+          <a class="social_link" href="https://set.ki"></a>
+        </li>
+        <li class="social_item">
+          <a class="social_link" href="/#long"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
   </body>
 </html>
