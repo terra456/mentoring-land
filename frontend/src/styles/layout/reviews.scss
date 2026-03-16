@@ -19,11 +19,13 @@
 
   & .marquee_content {
     --text-width: 2016px;
+    --speed: 25s;
 
     white-space: unset;
 
     @media (width < 748px) {
       --text-width: 1444px;
+      --speed: 35s;
     }
   }
 

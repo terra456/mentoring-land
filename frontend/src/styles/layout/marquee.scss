@@ -2,6 +2,7 @@
 
 .marquee {
   --text-width: 1550px;
+  --speed: 15s;
 
   @media (width < $to-mobile-width) {
     --text-width: 1300px;
@@ -67,7 +68,7 @@
     flex-flow: row nowrap;
     white-space: nowrap;
     width: fit-content;
-    animation: marquee 15s linear infinite;
+    animation: marquee var(--speed) linear infinite;
 
     // Гарантируем, что ширина трека будет минимум 2 * ширина текста
     min-width: calc(var(--text-width) * 2);

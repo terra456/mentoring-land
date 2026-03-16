@@ -39,6 +39,8 @@
       left: -14px;
       z-index: 0;
       background-image: var(--liner-blue-2);
+      transform-origin: center;
+      transform: rotate(-20deg);
       transition: all 300ms ease-in;
     }
 
@@ -55,8 +57,7 @@
     }
 
     .card.is-visible &::before {
-      transform-origin: center;
-      transform: rotate(-20deg);
+      transform: rotate(0deg);
     }
   }
 
