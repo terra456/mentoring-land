@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Предзагрузка ресурсов -->
+    <link
+      rel="preload"
+      href="/assets/fonts/Roboto-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    >
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Телеграм-бот со скороговорками</title>
+    <meta name="description" content="${pageDescription}">
+
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="/assets/main.css" media="print" onload="this.media = 'all'">
+  </head>
+  <body data-page="skorogovovich">
+    <load src="partials/header.html"/>
+
+    <main role="main">
+      <load src="content/skorogovorovich.html"/>
+    </main>
+
+    <load src="partials/cookie-banner.html"/>
+    <load src="partials/footer.html"/>
+
+    <!-- Общий JS -->
+    <script type="module" src="/main.js" defer></script>
+    <!-- JS страницы -->
+    <script type="module" src="/scripts/skorogovorovich.js" defer></script>
+  </body>
+</html>
