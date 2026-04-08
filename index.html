@@ -31,8 +31,9 @@
     <title>Рим Айбулатов | Менторство</title>
     <script type="module" crossorigin src="./assets/main.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/main2.js">
-    <link rel="stylesheet" crossorigin href="./assets/main2.css">
+    <link rel="modulepreload" crossorigin href="./assets/swiper.js">
     <link rel="stylesheet" crossorigin href="./assets/main.css">
+    <link rel="stylesheet" crossorigin href="./assets/swiper.css">
   </head>
   <body>
     <svg style="display: none">
@@ -76,28 +77,15 @@
         </button>
         <ul id="projects-menu" class="header_sublist">
           <li class="header_item header_subitem">
-            <a
-              class="header_link header_link--icon link-nav modal-trigger"
-              href="books"
-              data-content="contacts"
-              >Книги</a
-            >
+            <a class="header_link header_link--icon link-nav" href="/books">Книги</a>
           </li>
           <li class="header_item header_subitem">
-            <a
-              class="header_link header_link--icon link-nav modal-trigger"
-              href="scoro"
-              data-content="contacts"
+            <a class="header_link header_link--icon link-nav" href="/skorogovorovich"
               >Скороговорович</a
             >
           </li>
           <li class="header_item header_subitem">
-            <a
-              class="header_link header_link--icon link-nav modal-trigger"
-              href="nasbot"
-              data-content="nasobes"
-              >На Собес.РФ</a
-            >
+            <a class="header_link header_link--icon link-nav" href="/nasobes">На Собес.РФ</a>
           </li>
         </ul>
       </li>
@@ -762,13 +750,13 @@
           </p>
           <p class="section_subtitle">Для карьеры, для бизнеса, для социальных проектов</p>
           <div class="case_conteiner">
-            <div class="case_card task_card">
+            <a class="case_card task_card" href="/nasobes">
               <h3 class="case_title">
                 <img class="task_img" src="./assets/nasobes.svg" width="260px" height="40px">
               </h3>
               <p class="task_desk case_desk">От сервиса автооткликов — к&nbsp;бирже менторов</p>
-            </div>
-            <div class="case_card task_card">
+            </a>
+            <a class="case_card task_card" href="/skorogovorovich">
               <h3 class="case_title">
                 <img
                   class="task_img"
@@ -778,7 +766,7 @@
                 >
               </h3>
               <p class="task_desk">Телеграм-бот со&nbsp;скороговорками</p>
-            </div>
+            </a>
           </div>
         </div>
       </section>

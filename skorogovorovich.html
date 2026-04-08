@@ -3,31 +3,29 @@
   <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
-    <link rel="stylesheet" href="/assets/main.css" type="text/css">
+
+    <!-- Предзагрузка ресурсов -->
     <link
       rel="preload"
-      href="/assets/fonts/Tektur/Tektur-Bold.woff2"
+      href="./assets/fonts/Roboto-Regular.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     >
-    <link
-      rel="preload"
-      href="/assets/fonts/Inter/Inter-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    >
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Страница не найдена — Поддержка и сопровождение 1С</title>
-    <meta
-      name="description"
-      content="К сожалению, запрашиваемая страница не существует. Вернитесь на главную или свяжитесь с нами."
-    >
+    <title>Телеграм-бот со скороговорками</title>
+    <meta name="description" content="${pageDescription}">
+
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="/assets/main.css" media="print" onload="this.media = 'all'">
     <script type="module" crossorigin src="./assets/main2.js"></script>
+    <script type="module" crossorigin src="./assets/swiper.js"></script>
+    <script type="module" crossorigin src="./assets/image-slider.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/main.css">
+    <link rel="stylesheet" crossorigin href="./assets/swiper.css">
   </head>
-  <body>
+  <body data-page="skorogovovich">
     <header class="header" role="banner">
   <a href="/">
     <img
@@ -94,13 +92,85 @@
 
 
     <main role="main">
-      <div class="section_wrapper not-found">
-        <p class="not-found_title">404</p>
-        <h1 class="section_title">Страница не найдена</h1>
-        <p class="section_desk">Сожалеем, страница которую вы ищете не найдена</p>
-        <a class="cookie_btn btn btn--primary" href="/"> Вернуться на главную </a>
+      <section class="section project">
+  <div class="section_wrapper">
+    <div class="project_gallery">
+      <div class="swiper" role="images" aria-label="Слайдер с изображениями проекта">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="project_logo">
+              <img
+                class="project_img"
+                src="./assets/images/logo-tg-bot.svg"
+                width="120px"
+                height="120px"
+              >
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img class="project_img" src="./assets/images/skoro-1.png" alt="Основное изображение">
+          </div>
+          <div class="swiper-slide">
+            <img class="project_img" src="./assets/images/skoro-2.png" alt="Основное изображение">
+          </div>
+        </div>
       </div>
+    </div>
+    <h1 class="project_title">Скороговорович в Телеграме - тренировка речи без лишнего</h1>
+    <p class="project_desc">
+      Готовился к&nbsp;питчу. Проверил слайды, отработал логику, проговорил вслух&nbsp;—
+      и&nbsp;споткнулся на&nbsp;третьем предложении. Не&nbsp;из-за&nbsp;волнения. Просто артикуляция
+      «просела» за&nbsp;неделю без практики.
+    </p>
+    <p class="project_desc">
+      Полез искать решение. Приложения&nbsp;— перегружены. Логопед&nbsp;— дорого
+      и&nbsp;не&nbsp;каждый день. А&nbsp;для чёткой речи, как оказалось, не&nbsp;нужен час
+      в&nbsp;неделю. Нужны две минуты&nbsp;— каждый день.
+    </p>
+    <p class="project_desc">
+      Логопед - дорого и не каждый день. А для чёткой речи, как оказалось, не нужен час в неделю.
+      Нужны две минуты - каждый день.
+    </p>
+    <h2 class="project_subtitle">Сделал себе бота</h2>
+    <p class="project_desc">
+      Теперь каждое утро в&nbsp;выбранное время приходит одна скороговорка. Ровно одна&nbsp;— без
+      спама, без выбора из&nbsp;десяти. Рядом&nbsp;— коротко: какие звуки проработать и&nbsp;как.
+      Например: «Повтори 5&nbsp;раз. Язык упирается в&nbsp;верхние зубы».
+    </p>
+    <h2 class="project_subtitle">Открыл. Проговорил. Закрыл.</h2>
+    <p class="project_desc">
+      Через пару недель заметил: на&nbsp;совещаниях перестал «глотать» окончания.
+      В&nbsp;питчах&nbsp;— меньше пауз-«эээ». Не&nbsp;потому что стал «плохо говорить» раньше.
+      А&nbsp;потому что регулярность работает.
+    </p>
+    <p class="project_desc">
+      Бот не&nbsp;про исправление недостатков. Он&nbsp;про уважение к&nbsp;своему времени
+      и&nbsp;к&nbsp;тем, кто тебя слушает. Две минуты сегодня&nbsp;— чтобы завтра мысли дошли без
+      помех.
+    </p>
+    <h2 class="project_subtitle">Сделал для себя. Теперь делюсь.</h2>
+    <p class="project_desc">
+      <a>Ссылка на бота</a>
+    </p>
+  </div>
+</section>
+
     </main>
+
+    <div id="cookie" class="cookie_banner">
+  <p class="cookie_desc">
+    Мы используем
+    <a class="link-text" href="/cookie-policy.html">cookie</a>&nbsp;, чтобы сделать сайт удобнее для
+    вас
+  </p>
+  <button
+    id="cookieBtn"
+    type="button"
+    class="cookie_close"
+    aria-label="Согласится с использованием cookie"
+    title="Согласится с использованием cookie"
+  ></button>
+</div>
 
     <footer class="footer section" role="contentinfo">
   <div class="section_wrapper footer_wrapper">
@@ -200,5 +270,7 @@
 </footer>
 
 
+    <!-- Общий JS -->
+    <!-- JS страницы -->
   </body>
 </html>
