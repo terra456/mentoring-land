@@ -54,6 +54,7 @@ document.querySelectorAll(".swiper").forEach((swiperEl) => {
           slidesPerView: 3,
           spaceBetween: 1,
           direction: "vertical",
+          allowTouchMove: false,
         },
       },
     });

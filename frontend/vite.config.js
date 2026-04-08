@@ -5,7 +5,7 @@ import injectHTML from "vite-plugin-html-inject";
 export default defineConfig({
   root: "src", // Корень - папка src
   // Базовый путь для сборки — сайт развёрнут в поддиректории /veles/
-  base: "./",
+  base: "/mentoring-land/",
   // Публичные файлы (шрифты/картинки) лежат в `src/public` и должны копироваться в dist
   publicDir: resolve(__dirname, "src/public"),
   build: {
